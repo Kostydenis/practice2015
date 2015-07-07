@@ -58,20 +58,20 @@ html = BeautifulSoup(r, 'html.parser');
 # for each row of table
 # get each cell of row
 # if location or provider of def-code doesnt exist, create dict-entity in base-dictionary
-# for row in html.findAll('tr'):
-#     if row.findAll('th'): # save header of table
-#         headers = row.findAll('th')
-#     else:
-#         cell = row.findAll('td')
-#         if cell[2].text not in base:
-#             base[cell[2].text] = dict()
-#         if cell[3].strong.text not in base[cell[2].text]:
-#             base[cell[2].text][cell[3].strong.text] = dict()
-#         if cell[0].text+cell[1].text[0:3] not in base[cell[2].text][cell[3].strong.text]:
-#             base[cell[2].text][cell[3].strong.text][cell[0].text+cell[1].text[0:3]] = dict()
+for row in html.findAll('tr'):
+    if row.findAll('th'): # save header of table
+        headers = row.findAll('th')
+    else:
+        cell = row.findAll('td')
+        if cell[2].text not in base:
+            base[cell[2].text] = dict()
+        if cell[3].strong.text not in base[cell[2].text]:
+            base[cell[2].text][cell[3].strong.text] = dict()
+        if cell[0].text+cell[1].text[0:3] not in base[cell[2].text][cell[3].strong.text]:
+            base[cell[2].text][cell[3].strong.text][cell[0].text+cell[1].text[0:3]] = dict()
 
-#         base[cell[2].text][cell[3].strong.text][cell[0].text+cell[1].text[0:3]].update({headers[3].text.replace('Оператор/', '') : cell[3].span.text})
-#         base[cell[2].text][cell[3].strong.text][cell[0].text+cell[1].text[0:3]].update({headers[1].text : cell[1].text})
+        base[cell[2].text][cell[3].strong.text][cell[0].text+cell[1].text[0:3]].update({headers[3].text.replace('Оператор/', '') : cell[3].span.text})
+        base[cell[2].text][cell[3].strong.text][cell[0].text+cell[1].text[0:3]].update({headers[1].text : cell[1].text})
 
 print('Parsing was successful')
 print('Exporting to JSON')
