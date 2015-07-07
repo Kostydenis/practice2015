@@ -1,6 +1,6 @@
 import sys
 from datetime import datetime
-import requests;
+import requests
 import json
 from bs4 import BeautifulSoup
 
@@ -14,7 +14,7 @@ else:
 
 # form request
 data = {
-	'g': 'mtt',
+    'g': 'mtt',
     'm': 'def_codes',
     'a': 'processRequest',
     'def': "*",
@@ -28,10 +28,10 @@ data = {
 print('Starting downloading')
 
 # send request
-r = requests.post("http://www.mtt.ru/?callback=?", params=data);
+r = requests.post("http://www.mtt.ru/?callback=?", params=data)
 
 # parse from json
-r = r.json();
+r = r.json()
 
 if r.get('status') == 'success':
 	print('Download was successful')
@@ -47,13 +47,13 @@ r = r.get('resultHTML')
 # r = "<table>\r\n" + r + "\r\n</table>"
 
 # write html-table into file
-with open("base.html", "w") as f:
+with open("../base/base.html", "w") as f:
 	f.write(r)
 print('Starting parsing')
 base = dict()
 
 # creating object for html-parser
-html = BeautifulSoup(r, 'html.parser');
+html = BeautifulSoup(r, 'html.parser')
 
 # for each row of table
 # get each cell of row
@@ -77,7 +77,7 @@ print('Parsing was successful')
 print('Exporting to JSON')
 
 # export to JSON-format
-with open('data.json', 'w') as outfile:
+with open('../base/base.json', 'w') as outfile:
     json.dump(base, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
 print('Exporting was successful')
