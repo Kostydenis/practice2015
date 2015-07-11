@@ -1,0 +1,18 @@
+{
+	"title": "MTT.ru DEF-code downloader",
+	"find": "Find number",
+	"note_mnp": "Information can be incorrect",
+	"learnmore": "Learn more",
+	"placeholder_input_number_check": "Enter number, 10 digits",
+	"header_form_request": "Form request",
+	"placeholder_input_locations": "Enter regions",
+	"placeholder_input_providers": "Enter providers",
+	"placeholder_input_defs": "Enter DEF-codes",
+	"btn_form_request": "Make",
+	"btn_clear_form_request": "Clear",
+	"btn_update": "Update base",
+	"error_number_not_found": "Number not found",
+
+
+	"btn_about": "About"
+}

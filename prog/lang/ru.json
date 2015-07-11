@@ -1,0 +1,18 @@
+{
+	"title": "MTT.ru анализатор DEF-кодов",
+	"find": "Найти номер",
+	"note_mnp": "Информация может быть недостоверна.",
+	"learnmore": "Узнать больше",
+	"placeholder_input_number_check": "Введите номер для проверки, 10 цифр",
+	"header_form_request": "Сформируйте запрос",
+	"placeholder_input_locations": "Введите регионы",
+	"placeholder_input_providers": "Введите названия операторов",
+	"placeholder_input_defs": "Введите DEF-коды",
+	"btn_form_request": "Сформировать",
+	"btn_clear_form_request": "Очистить",
+	"btn_update": "Обновить базу",
+	"error_number_not_found": "Номер не найден.",
+
+
+	"btn_about": "О программе"
+}

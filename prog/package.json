@@ -1,0 +1,35 @@
+{
+  "name": "defbase",
+  "version": "0.0.1",
+  "description": "DEF codes parser",
+  "main": "index.html",
+  "lang": "ru",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kostydenis/practice2015.git"
+  },
+  "keywords": [
+    "def",
+    "html",
+    "parse"
+  ],
+  "author": "Denis Kostylev",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Kostydenis/practice2015/issues"
+  },
+  "homepage": "https://github.com/Kostydenis/practice2015#readme",
+  "window": {
+    "title": "MTT.ru DEF-codes",
+    "toolbar": true,
+    "frame": true,
+    "width": 800,
+    "height": 500,
+    "position": "mouse",
+    "min_width": 550,
+    "min_height": 200
+  },
+  "dependencies": {
+    "normalize.css": "^3.0.3"
+  }
+}

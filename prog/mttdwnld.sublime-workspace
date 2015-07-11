@@ -1,0 +1,1788 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"head",
+				"headers"
+			],
+			[
+				"in",
+				"interval"
+			],
+			[
+				"оператор",
+				"оператора"
+			],
+			[
+				"fi",
+				"findAll"
+			],
+			[
+				"getEle",
+				"getElementById(${0:id})	Element"
+			],
+			[
+				"if",
+				"if()"
+			],
+			[
+				"d",
+				"dwnldData.py"
+			],
+			[
+				"w",
+				"write"
+			],
+			[
+				"row",
+				"rows"
+			],
+			[
+				"tab",
+				"table_data"
+			],
+			[
+				"alert",
+				"alert(${0:message})	Window"
+			],
+			[
+				"cons",
+				"console.log('$0');"
+			],
+			[
+				"res",
+				"result	FileReader"
+			],
+			[
+				"ale",
+				"alert(${0:message})	Window"
+			],
+			[
+				"i",
+				"id	Attr"
+			],
+			[
+				"docu",
+				"documentclass{article}	New Article"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"ap",
+				"app_bar_line_height_mobile"
+			],
+			[
+				"a",
+				"after"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"switch_",
+				"switch_onclck"
+			],
+			[
+				"list",
+				"list:n	list-style-type:none"
+			],
+			[
+				"he",
+				"line-height"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"no",
+				"nomargin"
+			],
+			[
+				"pre",
+				"preview_color"
+			],
+			[
+				"dis",
+				"discipline_list"
+			],
+			[
+				"re",
+				"render_template"
+			],
+			[
+				"getElemn",
+				"getElementsByClassName(${0:names})	Element"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"lec",
+				"lec_card_list"
+			],
+			[
+				"cl",
+				"clearfix"
+			],
+			[
+				"fun",
+				"function(){\n	$0\n})();	(function(){\n	$0\n})();"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"di",
+				"divider"
+			],
+			[
+				"brtr",
+				"border-bottom-right-radius"
+			],
+			[
+				"brr",
+				"bdbrrz	border-bottom-right-radius"
+			],
+			[
+				"sh",
+				"shadow_lvl5"
+			],
+			[
+				"fa",
+				"face_borders"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"wit",
+				"width"
+			],
+			[
+				"po",
+				"pointer"
+			],
+			[
+				"cur",
+				"cur	cursor"
+			],
+			[
+				"s",
+				"shadow_lvl5"
+			],
+			[
+				"ex",
+				"extend"
+			],
+			[
+				"app",
+				"app_bar_line_height"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"menu",
+				"menu_anim_duration"
+			],
+			[
+				"me",
+				"menu_anim_duration"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"shadow_l",
+				"shadow_lvl2"
+			],
+			[
+				"fac",
+				"face_icons"
+			],
+			[
+				"rga",
+				"rgba"
+			],
+			[
+				"bx",
+				"bxsh+	box-shadow+"
+			],
+			[
+				"for",
+				"format"
+			],
+			[
+				"bdrs",
+				"bdrst	border-right-style"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"background-ma",
+				"background-image"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"co",
+				"content"
+			],
+			[
+				"cou",
+				"counter-increment"
+			],
+			[
+				"fon",
+				"font-style"
+			],
+			[
+				"ccc",
+				"cccccc"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "lang/ru.json",
+			"settings":
+			{
+				"buffer_size": 46,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_js/main.js",
+			"settings":
+			{
+				"buffer_size": 197,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 668,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/kostydenis/Dropbox/Sublime/User/nwjs.sublime-build",
+			"settings":
+			{
+				"buffer_size": 46,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/User/nwjs.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Primary Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Choose Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				],
+				[
+					"Packages/User/latex_edit.sublime-build",
+					""
+				],
+				[
+					"Packages/User/python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Primary Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Choose Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				],
+				[
+					"Packages/User/python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/User/latex_edit.sublime-build",
+					""
+				],
+				[
+					"Packages/User/python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/SASS Build/SASS - Compressed.sublime-build",
+					""
+				],
+				[
+					"Packages/SASS Build/SASS.sublime-build",
+					""
+				],
+				[
+					"Packages/User/latex_edit.sublime-build",
+					""
+				],
+				[
+					"Packages/User/python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/SASS Build/SASS.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/latex_edit.sublime-build",
+					""
+				],
+				[
+					"Packages/User/nwjs.sublime-build",
+					""
+				],
+				[
+					"Packages/User/python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/nwjs.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/latex_edit.sublime-build",
+					""
+				],
+				[
+					"Packages/User/python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/latex_edit.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 27.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ssmd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"fo",
+				"Format: Javascript"
+			],
+			[
+				"form",
+				"Format: Javascript"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JSON"
+			],
+			[
+				"for",
+				"Format: Javascript"
+			],
+			[
+				"f",
+				"Format: Javascript"
+			],
+			[
+				"ja",
+				"Format: Javascript"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ssla",
+				"Set Syntax: LaTeXing"
+			],
+			[
+				"clipa",
+				"Clipboard Manager: Paste"
+			],
+			[
+				"clish",
+				"Clipboard Manager: Show History"
+			],
+			[
+				"tra",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"clisho",
+				"Clipboard Manager: Show Registers"
+			],
+			[
+				"cli",
+				"Clipboard Manager: Show History"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"marmon",
+				"Markmon launch"
+			],
+			[
+				"ssto",
+				"Set Syntax: ToDone"
+			],
+			[
+				"tod",
+				"Set Syntax: ToDone"
+			],
+			[
+				"late",
+				"Set Syntax: LaTeXing"
+			],
+			[
+				"previ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"copy",
+				"Markdown Preview: Copy to Clipboard"
+			],
+			[
+				"pre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ht",
+				"HTMLBeautify"
+			],
+			[
+				"instaa",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"setsynma",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"extended",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"mar",
+				"Set Syntax: Markdown"
+			],
+			[
+				"j",
+				"Javascript Beautify"
+			],
+			[
+				"s",
+				"SassBeautify"
+			],
+			[
+				"htm",
+				"HTMLBeautify"
+			],
+			[
+				"sas",
+				"SassBeautify"
+			],
+			[
+				"html",
+				"HTMLBeautify"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"qui",
+				"CoolFormat: Quick Format"
+			],
+			[
+				"sass",
+				"SassBeautify"
+			],
+			[
+				"saa",
+				"Snippet: text-align-last:auto"
+			],
+			[
+				"bea",
+				"SassBeautify"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"list ",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"q",
+				"CoolFormat: Quick Format"
+			],
+			[
+				"qi",
+				"CoolFormat: Quick Format"
+			],
+			[
+				"bui",
+				"Build With: python3"
+			],
+			[
+				"qiu",
+				"CoolFormat: Quick Format"
+			],
+			[
+				"buil",
+				"Build With: python3"
+			],
+			[
+				"pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"make",
+				"Set Syntax: Makefile"
+			],
+			[
+				"set css",
+				"Set Syntax: CSS"
+			],
+			[
+				"sethtm",
+				"Set Syntax: HTML"
+			],
+			[
+				"package con",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"hrm",
+				"Set Syntax: HTML (Rails)"
+			],
+			[
+				"ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"ope",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"op",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/_css",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/_css/_sass",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/_js",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/_py"
+	],
+	"file_history":
+	[
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/_js/mttdwnlder.sublime-project",
+		"/Users/kostydenis/Dropbox/Sublime/User/nwjs.sublime-build",
+		"/Users/kostydenis/Dropbox/Sublime/User/latex_edit.sublime-build",
+		"/Users/kostydenis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/kostydenis/Dropbox/Sublime/User/Package Control.sublime-settings",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/_js/main.js",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/main.TODO",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/index.html",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/_css/_sass/main.sass",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/_py/dwnldData.py",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/test.py",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/_bin/data.json",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/_bin/dwnldData.py",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/base.html",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/data.json",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/data.txt",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/package.json",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/_bin/setup.py",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/dwnldData.py",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/tmp.html",
+		"/Users/kostydenis/Documents/edu_local/practice2015/prog/tmp.json",
+		"/Users/kostydenis/Desktop/Коды мобильных операторов",
+		"/Users/kostydenis/Documents/smth.py",
+		"/Users/kostydenis/Documents/edu_local/templates/report/ISTU_report.sty",
+		"/Users/kostydenis/Documents/edu_local/templates/report/main.tex",
+		"/Users/kostydenis/Documents/edu_local/templates/README.md",
+		"/Users/kostydenis/Documents/edu_local/templates/report/title.tex",
+		"/Users/kostydenis/Documents/edu_local/templates/report/intro.tex",
+		"/Users/kostydenis/Documents/edu_local/templates/report/info.tex",
+		"/Users/kostydenis/Documents/edu_local/templates/report/bibs.tex",
+		"/Users/kostydenis/Documents/edu_local/templates/report/TOC.tex",
+		"/Users/kostydenis/Documents/edu_local/templates/report/customCodes.sty",
+		"/Users/kostydenis/Documents/edu_local/templates/report/description.tex",
+		"/Users/kostydenis/Documents/edu_local/templates/report/listings.tex",
+		"/Users/kostydenis/Documents/edu_local/templates/report/bibliography.bib",
+		"/Users/kostydenis/Documents/edu_local/templates/report/codes/highlight.sty",
+		"/Users/kostydenis/Documents/edu_local/templates/report/codes.tex",
+		"/Users/kostydenis/Documents/edu_local/templates/report/ISTU_report.tex",
+		"/Users/kostydenis/Documents/edu_local/templates/report/main.docx",
+		"/Users/kostydenis/Documents/edu_local/templates/report/simplex.tex",
+		"/Users/kostydenis/Downloads/inconsolata.sty",
+		"/Users/kostydenis/Downloads/tle_usr_manual.tex",
+		"/Users/kostydenis/Documents/edu_local/TOY/labs/lab2/prog/Unit1.pas",
+		"/Users/kostydenis/Documents/edu_local/TOY/labs/lab2/report/main.tex",
+		"/Users/kostydenis/Documents/edu_local/TOY/labs/lab2/report/intro.tex",
+		"/Users/kostydenis/Documents/edu_local/TOY/labs/lab2/report/info.tex",
+		"/tmp/subl stdin RvtUmM.txt",
+		"/tmp/subl stdin regEdo.txt",
+		"/tmp/subl stdin PKSWee.txt",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/title.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/graphic.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/simplex.tex",
+		"/Users/kostydenis/Documents/rating/2015-06/main.tex",
+		"/Users/kostydenis/Documents/rating/2015-06/info.tex",
+		"/Users/kostydenis/Documents/rating/2015-06/settings.tex",
+		"/Volumes/NO NAME/rating/2015-06/main.pdf",
+		"/Users/kostydenis/Documents/rating/2015-06/main.pdf",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab3/report/intro.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab3/report/main.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab3/report/dual.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab3/report/mathmodel.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab2/report/mathmodel.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab2/report/intro.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab3/report/info.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab3/report/title.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab2/report/main.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab2/report/econ_description.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab2/report/settings.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab2/report/simplex.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab2/report/excel.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab2/report/dual.tex",
+		"/Users/kostydenis/Documents/edu_local/ICS design/README.md",
+		"/Users/kostydenis/Documents/edu_local/ICS design/task.txt",
+		"/Users/kostydenis/Documents/edu_local/web programming/README.md",
+		"/Users/kostydenis/Documents/edu_local/ICS design/task",
+		"/Users/kostydenis/Documents/edu_local/automated management basics/README.md",
+		"/Users/kostydenis/Desktop/links.txt",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab2/report/info.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab2/report/settings2.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/main.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/intro.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/settings.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/info.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/mathmodel.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/econ_description.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/excel.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/settings2.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/title2.tex",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/report/listings.tex",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/report/main.tex",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/report/description.tex",
+		"/Users/kostydenis/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/kostydenis/Documents/rating/2015-06/2processor.tex",
+		"/Users/kostydenis/Desktop/1.txt",
+		"/Users/kostydenis/Desktop/2.txt",
+		"/Users/kostydenis/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/kostydenis/Desktop/photo.txt",
+		"/Users/kostydenis/Documents/edu_local/OTY/lab2/report/POC.tex",
+		"/Users/kostydenis/Documents/edu_local/OTY/lab2/report/OOC.tex",
+		"/Users/kostydenis/Documents/edu_local/OTY/lab5/report/analitic.tex",
+		"/Users/kostydenis/Documents/edu_local/OTY/lab5/report/naikvist_plot.tex",
+		"/Users/kostydenis/Documents/edu_local/OTY/lab5/report/main.tex",
+		"/Users/kostydenis/Documents/edu_local/OTY/lab5/report/graphic.tex",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/simplex.log",
+		"/Users/kostydenis/Dropbox/Sublime/User/python3.sublime-build",
+		"/Users/kostydenis/Documents/edu_local/operation research/lab1/report/main.pdf",
+		"/Users/kostydenis/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
+		"/Users/kostydenis/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeX.sublime-build",
+		"/Users/kostydenis/Desktop/ту-ду.md",
+		"/Users/kostydenis/Desktop/latex.TODO",
+		"/Users/kostydenis/Downloads/code.tex",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/report/codes/main.bib",
+		"/Library/QuickLook/ColorQC.qlgenerator/Contents/Resources/langDefs/js.lang",
+		"/Library/QuickLook/ColorQC.qlgenerator/Contents/Resources/langDefs/txt.lang",
+		"/Library/QuickLook/ColorQC.qlgenerator/Contents/Resources/langDefs/tex.lang",
+		"/Library/QuickLook/ColorQC.qlgenerator/Contents/Resources/filetypes.conf",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/report/screens.tex",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/report/settings2.tex",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/report/sketches.tex",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/report/settings.tex",
+		"/Users/kostydenis/Desktop/СК ИО/Автобиография.md",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/report/intro.tex",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/public_html/_sass/main.scss",
+		"/Users/kostydenis/Documents/edu_local/OTY/lab1/report/settings.tex",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/public_html/_sass/main.css",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/public_html/run.py",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/public_html/app/templates/electr/index.html",
+		"/Users/kostydenis/Documents/edu_local/web programming/Lecture Keeper/public_html/app/templates/base.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"main.tex",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			";",
+			"headers[3].text",
+			"headers[3]",
+			"воте",
+			"3",
+			"вот",
+			"вотек",
+			"headers",
+			"][",
+			"3",
+			"cols",
+			"html",
+			"data",
+			"');\n",
+			"th",
+			"lol",
+			"get-code-button",
+			"мага",
+			"ирку",
+			"0",
+			"subsection",
+			"bbl",
+			"highlight",
+			"*\"\n",
+			"% ",
+			"lstcode",
+			"lst",
+			"highlight",
+			"setc",
+			"5cm",
+			"hfill",
+			"05",
+			"table",
+			"array",
+			"tabular",
+			"40",
+			"leqslant",
+			" &",
+			"cdot",
+			"1x_3",
+			"leqslant",
+			"hline",
+			"& ",
+			" $",
+			"hline",
+			"	",
+			" $",
+			"	",
+			"& ",
+			"00",
+			"	",
+			"H",
+			"multi",
+			"frac",
+			"centering",
+			"2",
+			"X",
+			"tabular",
+			"p",
+			"centering",
+			"tabular",
+			"p",
+			"2010",
+			"docs",
+			"%\n",
+			"tabularx",
+			"textbf",
+			"array",
+			"table",
+			"tabular",
+			"bf",
+			"table",
+			"bfseries",
+			"textbf",
+			"18",
+			"15",
+			"\\\\\n",
+			" \\",
+			"x_",
+			"x",
+			"12",
+			"itemize",
+			"} ",
+			"\\ ",
+			"leqslant",
+			"indent",
+			"JavaScript",
+			"py",
+			"}\n",
+			"section",
+			"index_list",
+			"card",
+			"car",
+			"win7_1000_index_card",
+			"screens",
+			"about",
+			"sketches",
+			"@media",
+			"after",
+			"url_for",
+			"mixin",
+			"Roboto",
+			"r: $mai",
+			"main_bg",
+			"@",
+			"\\_",
+			"flask",
+			"float",
+			"clear",
+			"lec_card_grid",
+			"lec_card",
+			"sha",
+			"div",
+			"nav"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"headers[3].text.replace('Оператор/', '')",
+			" & ",
+			"&",
+			"bf",
+			"bfseries",
+			"_",
+			"lec_card_list",
+			"lec_card_grid"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "lang/ru.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 197,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								197,
+								197
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 668,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								117,
+								143
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/kostydenis/Dropbox/Sublime/User/nwjs.sublime-build",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21,
+								21
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clipboard_manager":
+	{
+		"height": 100.0
+	},
+	"output.exec":
+	{
+		"height": 59.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "mttdwnld.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ind",
+				"index.html"
+			],
+			[
+				"mainjs",
+				"_js/main.js"
+			],
+			[
+				"ru",
+				"lang/ru.json"
+			],
+			[
+				"mtd",
+				"main.TODO"
+			],
+			[
+				"ma",
+				"_js/main.js"
+			],
+			[
+				"mt",
+				"main.TODO"
+			],
+			[
+				"dw",
+				"_py/dwnldData.py"
+			],
+			[
+				"html",
+				"index.html"
+			],
+			[
+				"da",
+				"_bin/data.json"
+			],
+			[
+				"data",
+				"data.json"
+			],
+			[
+				"in",
+				"index.html"
+			],
+			[
+				"jso",
+				"package.json"
+			],
+			[
+				"ist",
+				"ISTU_report.sty"
+			],
+			[
+				"ti",
+				"title.tex"
+			],
+			[
+				"bib",
+				"bibs.tex"
+			],
+			[
+				"to",
+				"TOC.tex"
+			],
+			[
+				"intr",
+				"intro.tex"
+			],
+			[
+				"mai",
+				"main.tex"
+			],
+			[
+				"s",
+				"ISTU_report.sty"
+			],
+			[
+				"",
+				"intro.tex"
+			],
+			[
+				"inf",
+				"info.tex"
+			],
+			[
+				"sim",
+				"simplex.tex"
+			],
+			[
+				"gr",
+				"graphic.tex"
+			],
+			[
+				"tit",
+				"title.tex"
+			],
+			[
+				"se",
+				"settings.tex"
+			],
+			[
+				"dua",
+				"dual.tex"
+			],
+			[
+				"mat",
+				"mathmodel.tex"
+			],
+			[
+				"math",
+				"mathmodel.tex"
+			],
+			[
+				"intro",
+				"intro.tex"
+			],
+			[
+				"eco",
+				"econ_description.tex"
+			],
+			[
+				"ex",
+				"excel.tex"
+			],
+			[
+				"int",
+				"intro.tex"
+			],
+			[
+				"sett",
+				"settings.tex"
+			],
+			[
+				"mod",
+				"mathmodel.tex"
+			],
+			[
+				"du",
+				"dual.tex"
+			],
+			[
+				"gra",
+				"graphic.tex"
+			],
+			[
+				"set",
+				"settings.tex"
+			],
+			[
+				"mte",
+				"main.tex"
+			],
+			[
+				"lis",
+				"listings.tex"
+			],
+			[
+				"ske",
+				"sketches.tex"
+			],
+			[
+				"scss",
+				"_sass/main.scss"
+			],
+			[
+				"sass/",
+				"_sass/main.css"
+			],
+			[
+				"run",
+				"run.py"
+			],
+			[
+				"templates/",
+				"app/templates/card.html"
+			],
+			[
+				"di",
+				"app/disciplines.py"
+			],
+			[
+				"electr/",
+				"app/templates/electr/index.html"
+			],
+			[
+				"ics/",
+				"app/templates/ics/index.html"
+			],
+			[
+				"a",
+				"app/templates/about.html"
+			],
+			[
+				"car",
+				"app/templates/card.html"
+			],
+			[
+				"web",
+				"app/templates/web/web.html"
+			],
+			[
+				"base",
+				"app/templates/base.html"
+			],
+			[
+				"view",
+				"app/views.py"
+			],
+			[
+				"abou",
+				"app/templates/about.html"
+			],
+			[
+				"_js",
+				"app/static/_js/main.js"
+			],
+			[
+				"bas",
+				"app/templates/base.html"
+			],
+			[
+				"top",
+				"app/static/_pics/_icons/top.svg"
+			],
+			[
+				"main.s",
+				"public_html/_sass/main.scss"
+			],
+			[
+				"tas",
+				"task.txt"
+			],
+			[
+				"scs",
+				"public_html/_sass/main.scss"
+			],
+			[
+				"css",
+				"public_html/_css/main.css"
+			],
+			[
+				"sass",
+				"Lecture Keeper/public_html/_sass/main.scss"
+			],
+			[
+				"electronic",
+				"edu_local/electronic-engineering/lecture.md"
+			],
+			[
+				"operation",
+				"edu_local/operation research/двойственная_задача_линейного_программирования.md"
+			],
+			[
+				"ele/le",
+				"edu_local/eco/lecture.md"
+			],
+			[
+				"main.j",
+				"public_html/_js/main.js"
+			],
+			[
+				"templates",
+				"public_html/app/templates/index.html"
+			],
+			[
+				"app",
+				"public_html/app/run.py"
+			],
+			[
+				"main",
+				"public_html/_sass/main.scss"
+			],
+			[
+				"py",
+				"public_html/app/views.py"
+			],
+			[
+				"ini",
+				"public_html/app/__init__.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

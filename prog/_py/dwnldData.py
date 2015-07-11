@@ -63,15 +63,22 @@ for row in html.findAll('tr'):
         headers = row.findAll('th')
     else:
         cell = row.findAll('td')
-        if cell[2].text not in base:
-            base[cell[2].text] = dict()
-        if cell[3].strong.text not in base[cell[2].text]:
-            base[cell[2].text][cell[3].strong.text] = dict()
-        if cell[0].text+cell[1].text[0:3] not in base[cell[2].text][cell[3].strong.text]:
-            base[cell[2].text][cell[3].strong.text][cell[0].text+cell[1].text[0:3]] = dict()
 
-        base[cell[2].text][cell[3].strong.text][cell[0].text+cell[1].text[0:3]].update({headers[3].text.replace('Оператор/', '') : cell[3].span.text})
-        base[cell[2].text][cell[3].strong.text][cell[0].text+cell[1].text[0:3]].update({headers[1].text : cell[1].text})
+        intvl_head = headers[1].text
+
+        code = cell[0].text
+        intvl = cell[1].text
+        loc = cell[2].text
+        prov = cell[3].strong.text
+
+        if loc not in base:
+            base[loc] = dict()
+        if prov not in base[loc]:
+            base[loc][prov] = dict()
+        if code not in base[loc][prov]:
+            base[loc][prov][code] = dict()
+
+        base[loc][prov][code].update({intvl: {}})
 
 print('Parsing was successful')
 print('Exporting to JSON')
