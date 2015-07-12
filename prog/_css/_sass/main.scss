@@ -51,7 +51,9 @@ header {
 }
 
 .content {
+	position: relative;
 	margin-bottom: 120px;
+	z-index: 5;
 }
 
 .block_number_check {
@@ -274,6 +276,7 @@ footer {
 	background-color: #ffffff;
 	border: solid 1px $divider-color;
 	width: 76%;
+	z-index: 10 !important;
 }
 .ui-state-focus {
 	color: $accent-color;
@@ -283,9 +286,9 @@ footer {
 .ui-helper-hidden-accessible {
 	display: none;
 }
-.ui-widget {
-	z-index: 100;
-}
+// .ui-widget {
+// 	z-index: 10;
+// }
 
 .modal_wrapper{
 	position: fixed;
@@ -299,20 +302,38 @@ footer {
 }
 .modal {
 
-	position: fixed;
-	width: 50%;
-	top: 25%;
+	position: fixed !important;
+	width: 70% !important;
+	max-height: 80%;
+	// height: 80%;
+	top: 5%;
 	transition: top ease 0.2s;
-	left: 25%;
+	left: 15%;
 	background-color: $primary-color-text;
 	@include shadow_lvl5;
 	padding: 20px;
 
 	z-index: 1001;
 
+	.nano-content {
+		padding: 20px !important;
+		h3 {
+			margin-bottom: 5px;
+		}
+		p {
+			margin: 0;
+		}
+	}
+
 	#btn_modal_ok {
 		width: 80px;
 		height: 30px;
+	}
+	#export_to_txt, #export_to_excel, #btn_close_export_modal {
+		width: 160px;
+		height: 40px;
+		margin-right: 15px;
+		margin-top: 15px;
 	}
 
 }

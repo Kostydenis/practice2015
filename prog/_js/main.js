@@ -2,7 +2,10 @@
 var os = require('os');
 var gui = require('nw.gui');
 var fs = require('fs');
-var exec = require("child_process").exec;
+// var exec = require("child_process").exec;
+var XLSX = require('xlsx');
+
+var lang;
 
 var base;
 var locations = ["*"];
@@ -12,6 +15,104 @@ var defs = ["*"];
 var chosenLocations = [];
 var chosenProviders = [];
 var chosenDefs = [];
+
+
+function init(l){
+	if (l == 'ru') {
+		langfile = 'lang/ru.json'
+	}
+	if (l == 'en') {
+		langfile = 'lang/en.json'
+	}
+	$.getJSON(langfile, function(response){
+		jQuery(document).ready(function(){
+			initBaseTemplate();
+			lang = response;
+			$('header h1').empty();
+			$('header h1').append(lang.title);
+
+			$('#note_mnp').empty();
+			$('#note_mnp').append(lang.note_mnp+' '+'<a id="learnmore_mnp">'+lang.learnmore+'</a>');
+
+			$('#learnmore_mnp').click(function(){gui.Shell.openExternal('http://pravo.gov.ru/proxy/ips/?docbody=&link_id=2&nd=102162254')});
+
+
+			$('.block_number_check').removeClass('preinit');
+			$('#input_number_check').focus();
+			$('#input_number_check').attr('placeholder', lang.placeholder_input_number_check);
+
+			$('#button_number_check').click( function() {
+				var provider = findProvider(strToCode($('#input_number_check').val()).def, strToCode($('#input_number_check').val()).number);
+				if (provider.error != undefined) {
+					openModal(provider.error);
+				} else {
+					openModal(provider.loc+'<br />'+provider.prov);
+				}
+
+			});
+
+			$('#btn_about').empty();
+			$('#btn_about').append(lang.btn_about);
+
+			$('#btn_about').click(function(){alert('Under construction')});
+
+			$('#btn_author').empty();
+			$('#btn_author').append(gui.App.manifest.author);
+
+			$('#btn_author').click(function() { gui.Shell.openExternal('http://kostydenis.me') });
+
+
+			$('.form_request').removeClass('preinit');
+
+			$('#header_form_request').empty();
+			$('#header_form_request').append(lang.header_form_request);
+
+			$('#input_locations').attr('placeholder', lang.placeholder_input_locations);
+			$('#input_providers').attr('placeholder', lang.placeholder_input_providers);
+			$('#input_defs').attr('placeholder', lang.placeholder_input_defs);
+
+			$('#btn_form_request').empty();
+			$('#btn_form_request').append(lang.btn_form_request);
+
+			$('#btn_form_request').click(function(){openExportModal()});
+
+			$('#btn_clear_form_request').empty();
+			$('#btn_clear_form_request').append('<span class="glyphicon glyphicon-trash" aria-hidden="true">&nbsp;</span>'+lang.btn_clear_form_request);
+
+			$('#btn_clear_form_request').click(function(){location.reload();});
+
+			$('#btn_update').empty();
+			$('#btn_update').append(lang.btn_update);
+			$('#btn_update').click(function(){});
+
+			$('#input_number_check').mask('+7 (000) 000-0000');
+
+			$('#btn_ru').click(function(){
+				$('#btn_ru').removeClass('not_pressed');
+				$('#btn_en').addClass('not_pressed');
+				init('ru');
+			});
+			$('#btn_en').click(function(){
+				$('#btn_en').removeClass('not_pressed');
+				$('#btn_ru').addClass('not_pressed');
+				init('en');
+			});
+
+			$('#export_to_txt').empty();
+			$('#export_to_txt').append(lang.export_to_txt);
+			$('#export_to_txt').click(function(){
+				exportToTxt();
+			});
+
+			$('#export_to_excel').empty();
+			$('#export_to_excel').append(lang.export_to_excel);
+			$('#export_to_excel').click(function(){
+				exportToExcel();
+			})
+		})
+	})
+	base_init();
+}
 
 var base_init = function() {
 	$.getJSON('base/base.json', function(response){
@@ -135,6 +236,11 @@ var base_init = function() {
 				chosenDefs.push( ui.item.value );
 				this.value = chosenDefs.join( ", " ) + ', ';
 
+				if (chosenDefs[0] == '*') {
+					chosenDefs = defs;
+					chosenDefs.splice(0, 1);
+				}
+
 				return false;
 			}
 		});
@@ -184,118 +290,77 @@ function strToCode(str) {
 	output.number = str.substring(9).replace('-', '');
 	return output;
 }
-
-var lang;
-function init(l){
-	if (l == 'ru') {
-		langfile = 'lang/ru.json'
+function findEqualDigits(first, second) {
+	var count = 0;
+	for (var i = 0; i<first.length; i++) {
+		if (first[i] === second[i]) {
+			count++;
+		} else {
+			return count;
+		}
 	}
-	if (l == 'en') {
-		langfile = 'lang/en.json'
-	}
-	$.getJSON(langfile, function(response){
-		lang = response;
-		$('header h1').empty();
-		$('header h1').append(lang.title);
-
-		$('#note_mnp').empty();
-		$('#note_mnp').append(lang.note_mnp+' '+'<a id="learnmore_mnp">'+lang.learnmore+'</a>');
-
-		$('#learnmore_mnp').click(function(){gui.Shell.openExternal('http://pravo.gov.ru/proxy/ips/?docbody=&link_id=2&nd=102162254')});
-
-
-		$('.block_number_check').removeClass('preinit');
-		$('#input_number_check').focus();
-		$('#input_number_check').attr('placeholder', lang.placeholder_input_number_check);
-
-		$('#button_number_check').click( function() {
-			var provider = findProvider(strToCode($('#input_number_check').val()).def, strToCode($('#input_number_check').val()).number);
-			if (provider.error != undefined) {
-				openModal(provider.error);
-			} else {
-				openModal(provider.loc+'<br />'+provider.prov);
-			}
-
-		});
-
-		$('#btn_about').empty();
-		$('#btn_about').append(lang.btn_about);
-
-		$('#btn_about').click(function(){alert('Under construction')});
-
-		$('#btn_author').empty();
-		$('#btn_author').append(gui.App.manifest.author);
-
-		$('#btn_author').click(function() { gui.Shell.openExternal('http://kostydenis.me') });
-
-
-		$('.form_request').removeClass('preinit');
-
-		$('#header_form_request').empty();
-		$('#header_form_request').append(lang.header_form_request);
-
-		$('#input_locations').attr('placeholder', lang.placeholder_input_locations);
-		$('#input_providers').attr('placeholder', lang.placeholder_input_providers);
-		$('#input_defs').attr('placeholder', lang.placeholder_input_defs);
-
-		$('#btn_form_request').empty();
-		$('#btn_form_request').append(lang.btn_form_request);
-
-		$('#btn_form_request').click(function(){});
-
-		$('#btn_clear_form_request').empty();
-		$('#btn_clear_form_request').append('<span class="glyphicon glyphicon-trash" aria-hidden="true">&nbsp;</span>'+lang.btn_clear_form_request);
-
-		$('#btn_clear_form_request').click(function(){location.reload();});
-
-		$('#btn_update').empty();
-		$('#btn_update').append(lang.btn_update);
-		$('#btn_update').click(function(){
-			showWaitScreen();
-			if (os.platform == 'darwin') {
-				var updater = exec('python3 _py/dwnldBase.py', function() {
-					console.log('stdout: ' + stdout);
-					console.log('stderr: ' + stderr);
-					if (error !== null) {
-						setErrorNumberCheck()
-					}
-				});
-			};
-			if (os.platform == 'darwin') {
-				var updater = exec('_py/dwnldBase.exe', function() {
-					if (error !== null) {
-						console.log('exec error: ' + error);
-					}
-				});
-			};
-			// var updater = exec( 'python3 _py/dwnldBase.py' );
-			child = exec('python3 _py/dwnldBase.py',
-  function (error, stdout, stderr) {
-    console.log('stdout: ' + stdout);
-    console.log('stderr: ' + stderr);
-    if (error !== null) {
-      console.log('exec error: ' + error);
-    }
-});
-
-		});
-
-		$('#input_number_check').mask('+7 (000) 000-0000');
-
-		$('#btn_ru').click(function(){
-			$('#btn_ru').removeClass('not_pressed');
-			$('#btn_en').addClass('not_pressed');
-			init('ru');
-		});
-		$('#btn_en').click(function(){
-			$('#btn_en').removeClass('not_pressed');
-			$('#btn_ru').addClass('not_pressed');
-			init('en');
-		});
-
-		$('#btn_modal_ok').click(function(){closeModal()});
-	});
+	return count;
 }
+function buildTemplates() {
+	var output = {};
+
+	for (loc in chosenLocations) {
+		output[chosenLocations[loc]] = {};
+		for (prov in chosenProviders) {
+			for (def in chosenDefs) {
+				if ($.inArray(chosenDefs[def], getDefs(chosenLocations[loc], chosenProviders[prov])) != -1) {
+					output[chosenLocations[loc]][chosenDefs[def]] = {};
+					output[chosenLocations[loc]][chosenDefs[def]].intvl = [];
+					var tmpInterval = getInterval(chosenLocations[loc], chosenProviders[prov], chosenDefs[def]);
+					output[chosenLocations[loc]][chosenDefs[def]].intvl.push(tmpInterval);
+				}
+			}
+		}
+	}
+	return output;
+}
+function exportToTXT() {
+	var date = new Date();
+	date = date.getFullYear()+'-'+(parseInt(date.getMonth())+1)+'-'+date.getDate()+'-'+
+			date.getHours()+'-'+date.getMinutes()+'-'+date.getSeconds();
+	fs.mkdirSync(date);
+
+	var listIntervals = buildTemplates();
+	for (loc in listIntervals) {
+	var file = fs.openSync(date+'/'+loc+'.txt', 'w');
+		for (def in listIntervals[loc]) {
+			for (intvls in listIntervals[loc][def].intvl[0]) {
+				var partsOfInterval = listIntervals[loc][def].intvl[0][intvls].split('-');
+				fs.write(file, def+partsOfInterval[0].substring(0, findEqualDigits(partsOfInterval[0],partsOfInterval[1]))+'%\r\n');
+			}
+		}
+	};
+}
+function exportToExcel() {
+	var date = new Date();
+	date = date.getFullYear()+'-'+(parseInt(date.getMonth())+1)+'-'+date.getDate()+'-'+
+			date.getHours()+'-'+date.getMinutes()+'-'+date.getSeconds();
+	var file = fs.openSync(date+'.xlsx', 'w');
+	var workbook = XLSX.readFile(file);
+
+	// fs.closeSync(fs.openSync(date+'.xlsx', 'w'));
+	// var workbook = XLSX.readFile(date+'.xlsx');
+}
+function exportToScreen() {
+var listIntervals = buildTemplates();
+for (loc in listIntervals) {
+	$('#modal-content').append('<h3>'+loc+'</h3>')
+	for (def in listIntervals[loc]) {
+		for (intvls in listIntervals[loc][def].intvl[0]) {
+			var partsOfInterval = listIntervals[loc][def].intvl[0][intvls].split('-');
+			$('#modal-content').append('<p>'+def+partsOfInterval[0].substring(0, findEqualDigits(partsOfInterval[0],partsOfInterval[1]))+'%</p>');
+		}
+	}
+};
+}
+
+
+
 
 function setError(err_msg) {
 	$('#error').removeClass('hide');
@@ -308,20 +373,56 @@ function unSetError() {
 	setTimeout(function(){$('#error').empty();}, 200);
 };
 
-$('#input_locations').on('change', function() {if (this.val() == ''){base_init()} });
-$('#input_providers').on('change', function() {if (this.val() == ''){base_init()} });
-$('#input_defs').on('change', function() {if (this.val() == ''){base_init()} });
+function openExportModal(){
 
+	$('.nano').nanoScroller();
+	$('.modal').addClass('nano');
+	$('.modal').append('<div class="nano-content" id="modal-content"></div>')
 
+	$('#modal-content').append('<button id="export_to_txt">'+lang.export_to_txt+'</button>');
+	$('#export_to_txt').click(function(){exportToTXT(); closeExportModal(); openModal(lang.successful_export);});
+	$('#modal-content').append('<button id="export_to_excel">'+lang.export_to_excel+'</button>');
+	$('#export_to_excel').click(function(){exportToExcel(); closeExportModal(); openModal(lang.successful_export);});
+	$('#modal-content').append('<button id="btn_close_export_modal">OK</button>');
+	$('#btn_close_export_modal').click(function(){closeExportModal();});
+
+	$('.modal_wrapper').removeClass('hide');
+	$('.modal').removeClass('preinit');
+	var listIntervals = buildTemplates();
+	for (loc in listIntervals) {
+		$('#modal-content').append('<h3>'+loc+'</h3>')
+		for (def in listIntervals[loc]) {
+			for (intvls in listIntervals[loc][def].intvl[0]) {
+				var partsOfInterval = listIntervals[loc][def].intvl[0][intvls].split('-');
+				$('#modal-content').append('<p>'+def+partsOfInterval[0].substring(0, findEqualDigits(partsOfInterval[0],partsOfInterval[1]))+'%</p>');
+			}
+		}
+	};
+	$('#modal-content').append('<button id="export_to_txt">'+lang.export_to_txt+'</button>');
+	// $('#export_to_txt').click(function(){exportToTXT(); closeExportModal(); openModal(lang.successful_export);});
+	$('#modal-content').append('<button id="export_to_excel">'+lang.export_to_excel+'</button>');
+	// $('#export_to_excel').click(function(){exportToExcel(); closeExportModal(); openModal(lang.successful_export);});
+	$('#modal-content').append('<button id="btn_close_export_modal">OK</button>');
+	// $('#btn_close_export_modal').click(function(){closeExportModal();});
+}
+function closeExportModal(){
+	$('modal').removeClass('nano');
+	$('.modal_wrapper').addClass('hide');
+	$('.modal').addClass('preinit');
+	$('.modal').empty();
+	location.reload();
+}
 function openModal(msg) {
 	$('.modal_wrapper').removeClass('hide');
 	$('.modal').removeClass('preinit');
-	$('.modal p').append(msg);
+	$('.modal').append('<p>'+msg+'</p>');
+	$('.modal').append('<button id="btn_modal_ok">OK</button>');
+	$('#btn_modal_ok').click(function(){closeModal()});
 }
 function closeModal() {
 	$('.modal_wrapper').addClass('hide');
 	$('.modal').addClass('preinit');
-	$('.modal p').empty();
+	$('.modal').empty();
 }
 
 
@@ -360,7 +461,59 @@ function findProvider(input_def, input_number) {
 	return output;
 }
 
-base_init();
+function initBaseTemplate() {
+
+	$('body').empty();
+	$('body').append(
+		'<div class="modal_wrapper hide"></div>'+
+		'<div class="modal preinit"></div>'+
+
+		'<header>'+
+			'<img src="_pics/sled_hero.png">'+
+			'<h1></h1>'+
+		'</header>'+
+
+		'<div class="content">'+
+
+			'<div id="error" class="hide">'+
+				'<p></p>'+
+			'</div>'+
+
+			'<div class="block_number_check preinit">'+
+				'<input type="text" id="input_number_check" />'+
+				'<button id="button_number_check"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>'+
+				'<p class="NB" id="note_mnp"></p>'+
+			'</div>'+
+
+			'<div class="form_request preinit">'+
+				'<h2 id="header_form_request"></h2>'+
+
+				'<input id="input_locations" type="text">'+
+				'<input id="input_providers" type="text">'+
+				'<input id="input_defs" type="text">'+
+
+				'<button id="btn_form_request"></button>'+
+				'<button id="btn_clear_form_request"></button>'+
+
+			'</div>'+
+
+			'<button id="btn_update" ></button>'+
+			'<div class="switch_lang">'+
+	        	'<div id="btn_en" class="switch_lang_btn not_pressed">en</div>'+
+	        	'<div id="btn_ru" class="switch_lang_btn">ru</div>'+
+	        '</div>'+
+
+		'</div>'+
+
+
+		'<footer>'+
+			'<p><a id="btn_author"></a></p>'+
+			'<p><a id="btn_about"></a></p>'+
+			'<p id="lbl_year">2015</p>'+
+		'</footer>'
+	);
+}
+
 init('ru');
 
 // Сделать футер

@@ -12,6 +12,10 @@
 	"btn_clear_form_request": "Clear",
 	"btn_update": "Update base",
 	"error_number_not_found": "Number not found",
+	"export_to_txt": "To plain text",
+	"export_to_excel": "To excel-file",
+	"successful_export": "Export was successful",
+	"unsuccessful_export": "Error occurs while exporting",
 
 
 	"btn_about": "About"
