@@ -21,8 +21,9 @@
   "homepage": "https://github.com/Kostydenis/practice2015#readme",
   "window": {
     "title": "MTT.ru DEF-codes",
-    "toolbar": true,
+    "toolbar": false,
     "frame": true,
+    "icon": "_pics/icon.png",
     "width": 800,
     "height": 500,
     "position": "mouse",

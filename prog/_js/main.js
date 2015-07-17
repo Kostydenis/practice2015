@@ -3,7 +3,8 @@ var os = require('os');
 var gui = require('nw.gui');
 var fs = require('fs');
 // var exec = require("child_process").exec;
-var XLSX = require('xlsx');
+var excelbuilder = require('msexcel-builder');
+
 
 var lang;
 
@@ -18,6 +19,7 @@ var chosenDefs = [];
 
 
 function init(l){
+	var langfile;
 	if (l == 'ru') {
 		langfile = 'lang/ru.json'
 	}
@@ -340,11 +342,24 @@ function exportToExcel() {
 	var date = new Date();
 	date = date.getFullYear()+'-'+(parseInt(date.getMonth())+1)+'-'+date.getDate()+'-'+
 			date.getHours()+'-'+date.getMinutes()+'-'+date.getSeconds();
-	var file = fs.openSync(date+'.xlsx', 'w');
-	var workbook = XLSX.readFile(file);
+	var wb = excelbuilder.createWorkbook('./', 'defs.xlsx');
 
-	// fs.closeSync(fs.openSync(date+'.xlsx', 'w'));
-	// var workbook = XLSX.readFile(date+'.xlsx');
+
+	var listIntervals = buildTemplates();
+	for (loc in listIntervals) {
+		var sheet = wb.createSheet(loc, 1, Object.keys(listIntervals[loc]).length);
+		var line = 1;
+		for (def in listIntervals[loc]) {
+			for (intvls in listIntervals[loc][def].intvl[0]) {
+				var partsOfInterval = listIntervals[loc][def].intvl[0][intvls].split('-');
+				try {
+					sheet.set(1, line++, def+partsOfInterval[0].substring(0, findEqualDigits(partsOfInterval[0],partsOfInterval[1]))+'%');
+				} catch(e) {}
+			}
+		}
+	};
+	wb.save(function(ok){});
+
 }
 function exportToScreen() {
 var listIntervals = buildTemplates();
@@ -379,11 +394,11 @@ function openExportModal(){
 	$('.modal').addClass('nano');
 	$('.modal').append('<div class="nano-content" id="modal-content"></div>')
 
-	$('#modal-content').append('<button id="export_to_txt">'+lang.export_to_txt+'</button>');
-	$('#export_to_txt').click(function(){exportToTXT(); closeExportModal(); openModal(lang.successful_export);});
-	$('#modal-content').append('<button id="export_to_excel">'+lang.export_to_excel+'</button>');
-	$('#export_to_excel').click(function(){exportToExcel(); closeExportModal(); openModal(lang.successful_export);});
-	$('#modal-content').append('<button id="btn_close_export_modal">OK</button>');
+	$('#modal-content').append('<button class="export_btn" id="export_to_txt">'+lang.export_to_txt+'</button>');
+	$('#export_to_txt').click(function(){exportToTXT(); alert(lang.successful_export);});
+	$('#modal-content').append('<button class="export_btn" id="export_to_excel">'+lang.export_to_excel+'</button>');
+	$('#export_to_excel').click(function(){exportToExcel(); alert(lang.successful_export);});
+	$('#modal-content').append('<button class="export_btn" id="btn_close_export_modal">OK</button>');
 	$('#btn_close_export_modal').click(function(){closeExportModal();});
 
 	$('.modal_wrapper').removeClass('hide');
@@ -398,12 +413,12 @@ function openExportModal(){
 			}
 		}
 	};
-	$('#modal-content').append('<button id="export_to_txt">'+lang.export_to_txt+'</button>');
-	// $('#export_to_txt').click(function(){exportToTXT(); closeExportModal(); openModal(lang.successful_export);});
-	$('#modal-content').append('<button id="export_to_excel">'+lang.export_to_excel+'</button>');
-	// $('#export_to_excel').click(function(){exportToExcel(); closeExportModal(); openModal(lang.successful_export);});
-	$('#modal-content').append('<button id="btn_close_export_modal">OK</button>');
-	// $('#btn_close_export_modal').click(function(){closeExportModal();});
+	$('#modal-content').append('<button class="export_btn" id="export_to_txt_2">'+lang.export_to_txt+'</button>');
+	$('#export_to_txt_2').click(function(){exportToTXT(); alert(lang.successful_export);});
+	$('#modal-content').append('<button class="export_btn" id="export_to_excel_2">'+lang.export_to_excel+'</button>');
+	$('#export_to_excel_2').click(function(){exportToExcel(); alert(lang.successful_export);});
+	$('#modal-content').append('<button class="export_btn" id="btn_close_export_modal_2">OK</button>');
+	$('#btn_close_export_modal_2').click(function(){closeExportModal();});
 }
 function closeExportModal(){
 	$('modal').removeClass('nano');
