@@ -7,7 +7,7 @@ var excelbuilder = require('msexcel-builder');
 
 
 var lang;
-
+var chosenLang = 'ru';
 var base;
 var locations = ["*"];
 var providers = ["*"];
@@ -18,12 +18,12 @@ var chosenProviders = [];
 var chosenDefs = [];
 
 
-function init(l){
+function init(){
 	var langfile;
-	if (l == 'ru') {
+	if (chosenLang == 'ru') {
 		langfile = 'lang/ru.json'
 	}
-	if (l == 'en') {
+	if (chosenLang == 'en') {
 		langfile = 'lang/en.json'
 	}
 	$.getJSON(langfile, function(response){
@@ -50,8 +50,43 @@ function init(l){
 				} else {
 					openModal(provider.loc+'<br />'+provider.prov);
 				}
-
 			});
+			$('#input_number_check').keypress(function(e) {
+				if (e.keyCode == 13) {
+					if ( $('.modal').attr('class').indexOf('preinit') != -1 ) {
+						var provider = findProvider(strToCode($('#input_number_check').val()).def, strToCode($('#input_number_check').val()).number);
+						if (provider.error != undefined) {
+							openModal(provider.error);
+						} else {
+							openModal(provider.loc+'<br />'+provider.prov);
+						}
+					} else {
+						closeModal();
+					}
+				}
+			});
+
+			//works like preventDefault() is used, even this one is commented ?!
+			//
+			$('input').keypress(function(e){
+				console.log(e);
+				if ( (e.ctrlKey == true) && (e.keyCode == 65) ||
+		        	 (e.metaKey == true) && (e.keyCode == 65) ) {
+					this.select();
+				};
+			});
+
+			document.onkeydown = function (e) {
+		        // console.log(e);
+		        if ( (e.ctrlKey == true) && (e.keyCode == 82) ||
+		        	 (e.metaKey == true) && (e.keyCode == 82) ) {
+		        	init();
+		        }
+		        if ( (e.ctrlKey == true) && (e.keyCode == 81) ||
+		        	 (e.metaKey == true) && (e.keyCode == 81) ) {
+		        	gui.Window.get().close();
+		        }
+			}
 
 			$('#btn_about').empty();
 			$('#btn_about').append(lang.btn_about);
@@ -92,12 +127,14 @@ function init(l){
 			$('#btn_ru').click(function(){
 				$('#btn_ru').removeClass('not_pressed');
 				$('#btn_en').addClass('not_pressed');
-				init('ru');
+				chosenLang = 'ru';
+				init();
 			});
 			$('#btn_en').click(function(){
 				$('#btn_en').removeClass('not_pressed');
 				$('#btn_ru').addClass('not_pressed');
-				init('en');
+				chosenLang = 'en';
+				init();
 			});
 
 			$('#export_to_txt').empty();
