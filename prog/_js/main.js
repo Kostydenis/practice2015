@@ -20,6 +20,10 @@ var chosenDefs = [];
 
 function init(){
 	var langfile;
+	var locations = ["*"];
+	var providers = ["*"];
+	var defs = ["*"];
+	
 	if (chosenLang == 'ru') {
 		langfile = 'lang/ru.json'
 	}

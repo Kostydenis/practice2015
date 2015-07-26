@@ -1,7 +1,7 @@
 # practice2015
 My practice work. DEF-codes html parser.
 
-## Заметки к релизу (v.0.3.0)
+## Заметки к релизу (v.0.3.1)
 
 ### Известные проблемы
 
