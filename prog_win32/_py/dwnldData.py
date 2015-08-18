@@ -10,6 +10,17 @@ if len(sys.argv) > 1:
 else:
     dwnldate = datetime.strftime(datetime.now(), "%d.%m.%Y")
 
+# check os and set right path to base
+# NB! basePath is path without extension
+if sys.platform == 'win32':
+    basePath = 'base/base'
+elif sys.platform == 'darwin':
+    basePath = '../../../../base/base'
+else:
+    print('You are running on unsupported OS.')
+    print('Or cygwin under the Windows (run in cmd)')
+    raise SystemExit(1) # exit with code 1 (error)
+
 # collecting data from mtt.ru
 
 # form request
@@ -47,7 +58,7 @@ r = r.get('resultHTML')
 # r = "<table>\r\n" + r + "\r\n</table>"
 
 # write html-table into file
-with open("../base/base.html", "w") as f:
+with open(basePath+".html", "w", encoding='utf-8') as f:
 	f.write(r)
 print('Starting parsing')
 base = dict()
@@ -84,7 +95,7 @@ print('Parsing was successful')
 print('Exporting to JSON')
 
 # export to JSON-format
-with open('../base/base.json', 'w') as outfile:
+with open(basePath+'.json', 'w', encoding='utf-8') as outfile:
     json.dump(base, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
 print('Exporting was successful')
