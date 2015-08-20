@@ -8,7 +8,7 @@ My practice work. DEF-codes html parser.
 ## Планы
 
 - вывод в excel-файлы по областям с вкладками по провайдерам
-
+- remove dev-files
 
 
 
