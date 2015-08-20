@@ -19,7 +19,12 @@ var chosenLocations = [];
 var chosenProviders = [];
 var chosenDefs = [];
 
-var saveTo = window.location.pathname.slice(0, -10);
+var saveTo;
+if (os.platform() === 'darwin') {
+    saveTo = window.location.pathname.slice(0, -10);
+} else {
+    saveTo = window.location.pathname.slice(1, -10);
+}
 
 var logFileDate = new Date();
 logFileDate = logFileDate.toLocaleString().replace(/[:]|, |[.]/g, '-');
@@ -639,7 +644,7 @@ function exportToTXT() {
 
                 var tmpProviders = getProviders(chosenLocations[loc]);
                 for (prov in tmpProviders) {
-                    var file = fs.openSync(saveTo+date + '/'+chosenLocations[loc]+'/' + tmpProviders[prov] + '.txt', 'w');
+                    var file = fs.openSync(saveTo+date + '/'+chosenLocations[loc]+'/' + tmpProviders[prov].replace(/"([^"]+)"/g, '«$1»') + '.txt', 'w');
                     var tmpDefs = getDefs(chosenLocations[loc], tmpProviders[prov]);
                     for (def in tmpDefs) {
                         var tmpInterval = getInterval(chosenLocations[loc], tmpProviders[prov], tmpDefs[def]);
@@ -659,7 +664,7 @@ function exportToTXT() {
                 log('File '+chosenLocations[loc]+' is created');
                 var tmpProviders = getProviders(chosenLocations[loc]);
                 for (prov in tmpProviders) {
-                    var file = fs.openSync(saveTo+date + '/' + chosenLocations[loc]+'/'+tmpProviders[prov] + '.txt', 'w');
+                    var file = fs.openSync(saveTo+date + '/' + chosenLocations[loc]+'/'+tmpProviders[prov].replace(/"([^"]+)"/g, '«$1»') + '.txt', 'w');
                     for (def in chosenDefs) {
                         if ( $.inArray(chosenDefs[def], getDefs(chosenLocations[loc],tmpProviders[prov])) != -1 ) {
                             var tmpInterval = getInterval(chosenLocations[loc], tmpProviders[prov], chosenDefs[def]);
@@ -681,7 +686,7 @@ function exportToTXT() {
                 fs.mkdirSync(saveTo+date+'/'+chosenLocations[loc]);
                 log('File '+chosenLocations[loc]+' is created');
                 for (prov in chosenProviders) {
-                    var file = fs.openSync(saveTo+date + '/' + chosenLocations[loc]+'/'+chosenProviders[prov] + '.txt', 'w');
+                    var file = fs.openSync(saveTo+date + '/' + chosenLocations[loc]+'/'+chosenProviders[prov].replace(/"([^"]+)"/g, '«$1»') + '.txt', 'w');
                     if ( $.inArray(chosenProviders[prov], getProviders(chosenLocations[loc])) != -1 ) {
                         var tmpDefs = getDefs(chosenLocations[loc], chosenProviders[prov]);
                         for (def in tmpDefs) {
@@ -702,7 +707,7 @@ function exportToTXT() {
                 fs.mkdirSync(saveTo+date+'/'+chosenLocations[loc]);
                 log('File '+chosenLocations[loc]+' is created');
                 for (prov in chosenProviders) {
-                    var file = fs.openSync(saveTo+date + '/' + chosenLocations[loc] +'/'+chosenProviders[prov]+'.txt', 'w');
+                    var file = fs.openSync(saveTo+date + '/' + chosenLocations[loc] +'/'+chosenProviders[prov].replace(/"([^"]+)"/g, '«$1»')+'.txt', 'w');
                     if ( $.inArray(chosenProviders[prov], getProviders(chosenLocations[loc])) != -1 ) {
                         for (def in chosenDefs) {
                             if ( $.inArray(chosenDefs[def], getDefs(chosenLocations[loc],chosenProviders[prov])) != -1 ) {
@@ -724,110 +729,6 @@ function exportToTXT() {
 
 }
 function exportToExcel() {
-
-    //---------CODE WITH BUGZ
-    //---cant save a lot of files in a row. need some kind of sync version of save
-    // showLoading();
-    // log('Starting export to excel');
-    // var date = new Date();
-    // date = date.toLocaleString().replace(/[:]|, |[.]/g, '-');
-    // fs.mkdirSync(saveTo+date);
-    // log('Excel file is created');
-
-    // if ($('#input_providers').val() == null) {
-    //     if ($('#input_defs').val() == null) {
-    //         for (loc in chosenLocations) {
-    //             var wb = excelbuilder.createWorkbook(saveTo+date, chosenLocations[loc]+'.xlsx');
-
-    //             var tmpProviders = getProviders(chosenLocations[loc]);
-    //             for (prov in tmpProviders) {
-    //                 var sheet = wb.createSheet(tmpProviders[prov], 1, 2000);
-    //                 var line = 1;
-    //                 var tmpDefs = getDefs(chosenLocations[loc], tmpProviders[prov]);
-    //                 for (def in tmpDefs) {
-    //                     var tmpInterval = getInterval(chosenLocations[loc], tmpProviders[prov], tmpDefs[def]);
-    //                     for (intvl in tmpInterval) {
-    //                         var tmpParts = intervalToTemplate(tmpInterval[intvl].split('-'));
-    //                         for (tmpl in tmpParts) {
-    //                             sheet.set(1, line++, tmpDefs[def] + tmpParts[tmpl]);
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //             wb.save(function (ok) {});
-    //         }
-    //     } else {
-    //         for (loc in chosenLocations) {
-    //             var wb = excelbuilder.createWorkbook(saveTo+date, chosenLocations[loc]+'.xlsx');
-
-    //             var tmpProviders = getProviders(chosenLocations[loc]);
-    //             for (prov in tmpProviders) {
-    //                 var sheet = wb.createSheet(tmpProviders[prov], 1, 3000);
-    //                 var line = 1;
-    //                 for (def in chosenDefs) {
-    //                     if ( $.inArray(chosenDefs[def], getDefs(chosenLocations[loc],tmpProviders[prov])) != -1 ) {
-    //                         var tmpInterval = getInterval(chosenLocations[loc], tmpProviders[prov], chosenDefs[def]);
-    //                         for (intvl in tmpInterval) {
-    //                             var tmpParts = intervalToTemplate(tmpInterval[intvl].split('-'));
-    //                             for (tmpl in tmpParts) {
-    //                                 sheet.set(1, line++, chosenDefs[def] + tmpParts[tmpl]);
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // } else {
-    //     if ($('#input_defs').val() == null) {
-    //         for (loc in chosenLocations) {
-    //             var wb = excelbuilder.createWorkbook(saveTo+date, chosenLocations[loc]+'.xlsx');
-
-    //             for (prov in chosenProviders) {
-    //                 var sheet = wb.createSheet(chosenProviders[prov], 1, 3000);
-    //                 var line = 1;
-    //                 if ( $.inArray(chosenProviders[prov], getProviders(chosenLocations[loc])) != -1 ) {
-    //                     var tmpDefs = getDefs(chosenLocations[loc], chosenProviders[prov]);
-    //                     for (def in tmpDefs) {
-    //                         var tmpInterval = getInterval(chosenLocations[loc], chosenProviders[prov], tmpDefs[def]);
-    //                         for (intvl in tmpInterval) {
-    //                             var tmpParts = intervalToTemplate(tmpInterval[intvl].split('-'));
-    //                             for (tmpl in tmpParts) {
-    //                                 sheet.set(1, line++, tmpDefs[def] + tmpParts[tmpl]);
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     } else {
-    //         for (loc in chosenLocations) {
-    //             var wb = excelbuilder.createWorkbook(saveTo+date, chosenLocations[loc]+'.xlsx');
-
-    //             for (prov in chosenProviders) {
-    //                 var sheet = wb.createSheet(chosenProviders[prov], 1, 3000);
-    //                 var line = 1;
-    //                 if ( $.inArray(chosenProviders[prov], getProviders(chosenLocations[loc])) != -1 ) {
-    //                     for (def in chosenDefs) {
-    //                         if ( $.inArray(chosenDefs[def], getDefs(chosenLocations[loc],chosenProviders[prov])) != -1 ) {
-    //                             var tmpInterval = getInterval(chosenLocations[loc], chosenProviders[prov], chosenDefs[def]);
-    //                             for (intvl in tmpInterval) {
-    //                                 var tmpParts = intervalToTemplate(tmpInterval[intvl].split('-'));
-    //                                 for (tmpl in tmpParts) {
-    //                                     sheet.set(1, line++, chosenDefs[def] + tmpParts[tmpl]);
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    // hideLoadingWOWrapper();
-    // alert(lang.successful_export);
-
-    //----------END CODE WITH BUGZ
 
     showLoading();
     log('Starting export to excel');
@@ -939,7 +840,7 @@ function exportToScreen() {
                 $('#modal-content').append('<h3>' + chosenLocations[loc] + '</h3>');
                 var tmpProviders = getProviders(chosenLocations[loc]);
                 for (prov in tmpProviders) {
-
+                    $('#modal-content').append('<h4>' + tmpProviders[prov] + '</h4>');
                     var tmpDefs = getDefs(chosenLocations[loc], tmpProviders[prov]);
                     for (def in tmpDefs) {
                         var tmpInterval = getInterval(chosenLocations[loc], tmpProviders[prov], tmpDefs[def]);
@@ -957,7 +858,7 @@ function exportToScreen() {
                 $('#modal-content').append('<h3>' + chosenLocations[loc] + '</h3>');
                 var tmpProviders = getProviders(chosenLocations[loc]);
                 for (prov in tmpProviders) {
-
+                    $('#modal-content').append('<h4>' + tmpProviders[prov] + '</h4>');
                     for (def in chosenDefs) {
                         if ( $.inArray(chosenDefs[def], getDefs(chosenLocations[loc],tmpProviders[prov])) != -1 ) {
                             var tmpInterval = getInterval(chosenLocations[loc], tmpProviders[prov], chosenDefs[def]);
@@ -977,6 +878,7 @@ function exportToScreen() {
             for (loc in chosenLocations) {
                 $('#modal-content').append('<h3>' + chosenLocations[loc] + '</h3>');
                 for (prov in chosenProviders) {
+                    $('#modal-content').append('<h4>' + chosenProviders[prov] + '</h4>');
                     if ( $.inArray(chosenProviders[prov], getProviders(chosenLocations[loc])) != -1 ) {
                         var tmpDefs = getDefs(chosenLocations[loc], chosenProviders[prov]);
                         for (def in tmpDefs) {
@@ -995,6 +897,7 @@ function exportToScreen() {
             for (loc in chosenLocations) {
                 $('#modal-content').append('<h3>' + chosenLocations[loc] + '</h3>');
                 for (prov in chosenProviders) {
+                    $('#modal-content').append('<h4>' + chosenProviders[prov] + '</h4>');
                     if ( $.inArray(chosenProviders[prov], getProviders(chosenLocations[loc])) != -1 ) {
                         for (def in chosenDefs) {
                             if ( $.inArray(chosenDefs[def], getDefs(chosenLocations[loc],chosenProviders[prov])) != -1 ) {
