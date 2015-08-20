@@ -9,6 +9,7 @@ My practice work. DEF-codes html parser.
 
 - вывод в excel-файлы по областям с вкладками по провайдерам
 - remove dev-files
+- compress with UPX
 
 
 
