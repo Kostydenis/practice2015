@@ -133,9 +133,7 @@ function init() {
             $('#btn_about').empty();
             $('#btn_about').append(lang.btn_about);
 
-            $('#btn_about').click(function () {
-                openModal('Under construction')
-            });
+            $('#btn_about').click(openAboutModal);
 
             $('#btn_author').empty();
             $('#btn_author').append(gui.App.manifest.author);
@@ -1009,12 +1007,26 @@ function openExportModal() {
     });
 }
 function closeExportModal() {
-    log('Export modal is closed');
-    $('modal').removeClass('nano');
-    $('#modal_wrapper').addClass('hide');
-    $('.modal').addClass('preinit');
-    $('.modal').empty();
     location.reload();
+}
+function openAboutModal() {
+    $('#modal_wrapper').removeClass('hide');
+    $('.modal').removeClass('preinit');
+    $('.modal').append('<div class="github-fork-ribbon-wrapper right">'+
+                                    '<div class="github-fork-ribbon">' +
+                                        '<a href="https://github.com/Kostydenis/practice2015">Fork me on GitHub</a>' +
+                                    '</div>' +
+                                '</div>');
+    $('.modal').append('<h3>'+lang.btn_about+'</h3>');
+    $('.modal').append('<p>'+lang.about_page+'<a href="mailto:kostydenis@gmail.com">kostydenis@gmail.com</a>'+'</p>');
+    $('.modal').append('<p>'+lang.about_manual+'<a href="https://github.com/Kostydenis/practice2015">'+lang.open+'</a></p>');
+
+    $('#modal_wrapper').removeClass('hide');
+    $('.modal').removeClass('preinit');
+
+
+    $('.modal').append('<button id="btn_modal_ok">OK</button>');
+    $('#btn_modal_ok').click(closeModal);
 }
 
 function openModal(msg) {
@@ -1023,9 +1035,7 @@ function openModal(msg) {
     $('.modal').removeClass('preinit');
     $('.modal').append('<p>' + msg + '</p>');
     $('.modal').append('<button id="btn_modal_ok">OK</button>');
-    $('#btn_modal_ok').click(function () {
-        closeModal()
-    });
+    $('#btn_modal_ok').click(closeModal);
 }
 function closeModal() {
     $('#modal_wrapper').addClass('hide');
