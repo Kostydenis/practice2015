@@ -11,7 +11,7 @@ $divider-color:        #B6B6B6;
 $error-color: rgba(240,0,0,0.8);
 
 @mixin shadow_lvl1 {
-	box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.5	);
 }
 
 @mixin shadow_lvl2 {

@@ -1,0 +1,31 @@
+\noindent
+\ttfamily
+\hlstd{}\hllin{\ 1\ }\hlkwa{var\ }\hlstd{base\textunderscore init\ }\hlopt{=\ }\hlstd{}\hlkwa{function\ }\hlstd{}\hlopt{()\ \usebox{\hlboxopenbrace}}\\
+\hllin{\ 2\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{log}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'Staring\ initialization\ of\ base'}\hlstd{}\hlopt{);}\\
+\hllin{\ 3\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\$.}\hlstd{}\hlkwd{getJSON}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'base/base.json'}\hlstd{}\hlopt{,\ }\hlstd{}\hlkwa{function\ }\hlstd{}\hlopt{(}\hlstd{response}\hlopt{)\ \usebox{\hlboxopenbrace}}\\
+\hllin{\ 4\ }\hlstd{\\
+\hllin{\ 5\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'.last\textunderscore update'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{empty}\hlstd{}\hlopt{();}\\
+\hllin{\ 6\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{baseModifyDate\ }\hlopt{=\ }\hlstd{fs}\hlopt{.}\hlstd{}\hlkwd{statSync}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'base/base.json'}\hlstd{}\hlopt{).}\Righttorque\\
+\hllin{\ 7\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{mtime}\hlopt{;}\\
+\hllin{\ 8\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'.last\textunderscore update'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\hlstd{lang}\hlopt{.}\hlstd{base\textunderscore last\textunderscore update}\hlopt{+}\Righttorque\\
+\hllin{\ 9\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{baseModifyDate}\hlopt{.}\hlstd{}\hlkwd{toLocaleDateString}\hlstd{}\hlopt{().}\hlstd{}\hlkwd{replace}\hlstd{}\hlopt{(/{[}:{]}\textbar ,\ \textbar {[}}\Righttorque\\
+\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{.{]}/}\hlstd{g}\hlopt{,\ }\hlstd{}\hlstr{'{-}'}\hlstd{}\hlopt{));}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{}\hlkwd{dateDiffInDays}\hlstd{}\hlopt{(}\hlstd{baseModifyDate}\hlopt{,\ }\hlstd{}\hlkwa{new\ }\hlstd{}\hlkwd{Date}\hlstd{}\hlopt{())\ \usebox{\hlboxgreaterthan}\ }\hlstd{}\hlnum{30}\hlstd{}\hlopt{)\ }\Righttorque\\
+\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{setError}\hlstd{}\hlopt{();}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{base\ }\hlopt{=\ }\hlstd{response}\hlopt{;}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{locations\ }\hlopt{=\ }\hlstd{}\hlkwd{getLocations}\hlstd{}\hlopt{();}\\
+\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{initAutocomplete}\hlstd{}\hlopt{();}\\
+\hllin{18\ }\hlstd{\\
+\hllin{19\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\usebox{\hlboxlessthan}...\usebox{\hlboxgreaterthan}}\\
+\hllin{20\ }\hlstd{\\
+\hllin{21\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore locations'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{chosen}\hlstd{}\hlopt{();}\\
+\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore providers'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{chosen}\hlstd{}\hlopt{();}\\
+\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore defs'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{chosen}\hlstd{}\hlopt{();}\\
+\hllin{24\ }\hlstd{\\
+\hllin{25\ }}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace});}\\
+\hllin{26\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\hlstd{}\\
+\mbox{}
+\normalfont
+\normalsize

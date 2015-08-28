@@ -1,0 +1,434 @@
+\noindent
+\ttfamily
+\hlstd{}\hllin{\ 1\ }\hlkwc{@import\ }\hlstd{}\hlstr{\dq{}fonts.scss\dq{}}\hlstd{}\hlopt{;}\\
+\hllin{\ 2\ }\hlstd{}\\
+\hllin{\ 3\ }\hlkwb{\$primary{-}color{-}light}\hlstd{}\hlopt{:}\hlstd{\ \ }\hlopt{}\hlstd{}\hlnum{\#7B1FA2}\hlstd{}\hlopt{;}\\
+\hllin{\ 4\ }\hlstd{}\hlkwb{\$primary{-}color}\hlstd{}\hlopt{:}\hlstd{\ \ \ \ \ \ \ \ }\hlopt{}\hlstd{}\hlnum{\#9C27B0}\hlstd{}\hlopt{;}\\
+\hllin{\ 5\ }\hlstd{}\hlkwb{\$primary{-}color{-}light}\hlstd{}\hlopt{:}\hlstd{\ \ }\hlopt{}\hlstd{}\hlnum{\#E1BEE7}\hlstd{}\hlopt{;}\\
+\hllin{\ 6\ }\hlstd{}\hlkwb{\$primary{-}color{-}text}\hlstd{}\hlopt{:}\hlstd{\ \ \ }\hlopt{}\hlstd{}\hlnum{\#FFFFFF}\hlstd{}\hlopt{;}\\
+\hllin{\ 7\ }\hlstd{}\hlkwb{\$accent{-}color}\hlstd{}\hlopt{:}\hlstd{\ \ \ \ \ \ \ \ \ }\hlopt{}\hlstd{}\hlnum{\#607D8B}\hlstd{}\hlopt{;}\\
+\hllin{\ 8\ }\hlstd{}\hlkwb{\$primary{-}text{-}color}\hlstd{}\hlopt{:}\hlstd{\ \ \ }\hlopt{}\hlstd{}\hlnum{\#212121}\hlstd{}\hlopt{;}\\
+\hllin{\ 9\ }\hlstd{}\hlkwb{\$secondary{-}text{-}color}\hlstd{}\hlopt{:\ }\hlstd{}\hlnum{\#727272}\hlstd{}\hlopt{;}\\
+\hllin{10\ }\hlstd{}\hlkwb{\$divider{-}color}\hlstd{}\hlopt{:}\hlstd{\ \ \ \ \ \ \ \ }\hlopt{}\hlstd{}\hlnum{\#B6B6B6}\hlstd{}\hlopt{;}\\
+\hllin{11\ }\hlstd{}\hlkwb{\$error{-}color}\hlstd{}\hlopt{:\ }\hlstd{}\hlkwd{rgba}\hlstd{}\hlopt{(}\hlstd{}\hlnum{240}\hlstd{}\hlopt{,}\hlstd{}\hlnum{0}\hlstd{}\hlopt{,}\hlstd{}\hlnum{0}\hlstd{}\hlopt{,}\hlstd{}\hlnum{0.8}\hlstd{}\hlopt{);}\\
+\hllin{12\ }\hlstd{}\\
+\hllin{13\ }\hlkwc{@mixin\ }\hlstd{shadow\textunderscore lvl1\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{14\ }\hlstd{\ box{-}shadow}\hlopt{:\ }\hlstd{}\hlnum{1px\ 2px\ 4px\ 0px\ }\hlstd{}\hlkwd{rgba}\hlstd{}\hlopt{(}\hlstd{}\hlnum{0}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{0.5}\hlstd{}\hlopt{);}\\
+\hllin{15\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{16\ }\hlstd{}\\
+\hllin{17\ }\hlkwc{@mixin\ }\hlstd{shadow\textunderscore lvl2\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{18\ }\hlstd{\ box{-}shadow}\hlopt{:\ }\hlstd{}\hlnum{0px\ 4px\ 8px\ 0px\ }\hlstd{}\hlkwd{rgba}\hlstd{}\hlopt{(}\hlstd{}\hlnum{0}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{0.5}\hlstd{}\hlopt{);}\\
+\hllin{19\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{20\ }\hlstd{}\\
+\hllin{21\ }\hlkwc{@mixin\ }\hlstd{shadow\textunderscore lvl5\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{22\ }\hlstd{\ box{-}shadow}\hlopt{:\ }\hlstd{}\hlnum{0px\ 0px\ 15px\ 7px\ }\hlstd{}\hlkwd{rgba}\hlstd{}\hlopt{(}\hlstd{}\hlnum{0}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{0.5}\hlstd{}\hlopt{);}\\
+\hllin{23\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{24\ }\hlstd{}\\
+\hllin{25\ }\hlopt{.}\hlstd{clearfix\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{26\ }\hlstd{\ }\hlopt{\&:}\hlstd{after\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{27\ }\hlstd{}\hlstd{\ \ }\hlstd{content}\hlopt{:\ }\hlstd{}\hlstr{''}\hlstd{}\hlopt{;}\\
+\hllin{28\ }\hlstd{}\hlstd{\ \ }\hlstd{display}\hlopt{:\ }\hlstd{block}\hlopt{;}\\
+\hllin{29\ }\hlstd{}\hlstd{\ \ }\hlstd{clear}\hlopt{:\ }\hlstd{both}\hlopt{;}\\
+\hllin{30\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{31\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{32\ }\hlstd{}\\
+\hllin{33\ }\hlkwc{@font{-}face\ }\hlstd{}\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{font{-}family}\hlopt{:\ }\hlstd{Roboto}\hlopt{;}\\
+\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{src}\hlopt{:\ }\hlstd{}\hlkwd{local}\hlstd{}\hlopt{(}\hlstd{}\hlstr{\dq{}Roboto\dq{}}\hlstd{}\hlopt{);}\\
+\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{src}\hlopt{:\ }\hlstd{}\hlkwd{url}\hlstd{}\hlopt{(../}\hlstd{\textunderscore fonts}\hlopt{/}\hlstd{Roboto}\hlopt{.}\hlstd{ttf}\hlopt{);}\\
+\hllin{37\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{38\ }\hlstd{\\
+\hllin{39\ }body\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{40\ }\hlstd{\ font{-}family}\hlopt{:\ }\hlstd{Roboto}\hlopt{;}\\
+\hllin{41\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{42\ }\hlstd{\\
+\hllin{43\ }header\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{44\ }\hlstd{\ h1\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{45\ }\hlstd{}\hlstd{\ \ }\hlstd{position}\hlopt{:\ }\hlstd{absolute}\hlopt{;}\\
+\hllin{46\ }\hlstd{}\hlstd{\ \ }\hlstd{top}\hlopt{:\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;}\\
+\hllin{47\ }\hlstd{}\hlstd{\ \ }\hlstd{right}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{48\ }\hlstd{}\hlstd{\ \ }\hlstd{font{-}size}\hlopt{:\ }\hlstd{x{-}large}\hlopt{;}\\
+\hllin{49\ }\hlstd{}\hlstd{\ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$primary{-}color{-}text}\hlstd{}\hlopt{;}\\
+\hllin{50\ }\hlstd{}\hlstd{\ \ }\hlstd{text{-}shadow}\hlopt{:\ }\hlstd{}\hlnum{0px\ 0px\ 20px\ }\hlstd{}\hlkwd{rgba}\hlstd{}\hlopt{(}\hlstd{}\hlnum{0}\hlstd{}\hlopt{,}\hlstd{}\hlnum{0}\hlstd{}\hlopt{,}\hlstd{}\hlnum{0}\hlstd{}\hlopt{,}\hlstd{}\hlnum{1}\hlstd{}\hlopt{);}\\
+\hllin{51\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{52\ }\hlstd{\ img\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{53\ }\hlstd{}\hlstd{\ \ }\hlstd{position}\hlopt{:\ }\hlstd{relative}\hlopt{;}\\
+\hllin{54\ }\hlstd{}\hlstd{\ \ }\hlstd{width}\hlopt{:\ }\hlstd{}\hlnum{100}\hlstd{}\hlopt{\%;}\\
+\hllin{55\ }\hlstd{}\hlstd{\ \ }\hlstd{{-}webkit{-}filter}\hlopt{:\ }\hlstd{}\hlkwd{opacity}\hlstd{}\hlopt{(}\hlstd{}\hlnum{.6}\hlstd{}\hlopt{);}\\
+\hllin{56\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{57\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{58\ }\hlstd{}\\
+\hllin{59\ }\hlopt{.}\hlstd{content\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{60\ }\hlstd{\ margin{-}bottom}\hlopt{:\ }\hlstd{}\hlnum{100px}\hlstd{}\hlopt{;}\\
+\hllin{61\ }\hlstd{\ position}\hlopt{:\ }\hlstd{relative}\hlopt{;}\\
+\hllin{62\ }\hlstd{\ z{-}index}\hlopt{:\ }\hlstd{}\hlnum{5}\hlstd{}\hlopt{;}\\
+\hllin{63\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{64\ }\hlstd{}\\
+\hllin{65\ }\hlopt{.}\hlstd{block\textunderscore number\textunderscore check\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{66\ }\hlstd{\\
+\hllin{67\ }\ position}\hlopt{:\ }\hlstd{relative}\hlopt{;}\\
+\hllin{68\ }\hlstd{\ margin{-}top}\hlopt{:\ }\hlstd{{-}15px}\hlopt{;}\\
+\hllin{69\ }\hlstd{\ margin{-}bottom}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{70\ }\hlstd{\ width}\hlopt{:\ }\hlstd{}\hlnum{100}\hlstd{}\hlopt{\%;}\\
+\hllin{71\ }\hlstd{\ transition}\hlopt{:\ }\hlstd{margin{-}top\ ease\ }\hlnum{0.2s}\hlstd{}\hlopt{;}\\
+\hllin{72\ }\hlstd{\\
+\hllin{73\ }\ }\hlopt{\#}\hlstd{input\textunderscore number\textunderscore check\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{74\ }\hlstd{}\hlstd{\ \ }\hlstd{position}\hlopt{:\ }\hlstd{relative}\hlopt{;}\\
+\hllin{75\ }\hlstd{}\hlstd{\ \ }\hlstd{top}\hlopt{:\ }\hlstd{}\hlnum{0px}\hlstd{}\hlopt{;}\\
+\hllin{76\ }\hlstd{}\hlstd{\ \ }\hlstd{padding}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{77\ }\hlstd{}\hlstd{\ \ }\hlstd{left}\hlopt{:\ }\hlstd{}\hlnum{5}\hlstd{}\hlopt{\%;}\\
+\hllin{78\ }\hlstd{}\hlstd{\ \ }\hlstd{height}\hlopt{:\ }\hlstd{}\hlnum{60px}\hlstd{}\hlopt{;}\\
+\hllin{79\ }\hlstd{}\hlstd{\ \ }\hlstd{width}\hlopt{:\ }\hlstd{}\hlnum{90}\hlstd{}\hlopt{\%;}\\
+\hllin{80\ }\hlstd{}\hlstd{\ \ }\hlstd{margin}\hlopt{:\ }\hlstd{}\hlnum{0\ }\hlstd{auto}\hlopt{;}\\
+\hllin{81\ }\hlstd{}\hlstd{\ \ }\hlstd{font{-}size}\hlopt{:\ }\hlstd{x{-}large}\hlopt{;}\\
+\hllin{82\ }\hlstd{}\hlstd{\ \ }\hlstd{border}\hlopt{:\ }\hlstd{none}\hlopt{;}\\
+\hllin{83\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwc{@include\ }\hlstd{shadow\textunderscore lvl1}\hlopt{;}\\
+\hllin{84\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{85\ }\hlstd{\\
+\hllin{86\ }\ }\hlopt{\#}\hlstd{button\textunderscore number\textunderscore check\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{87\ }\hlstd{}\hlstd{\ \ }\hlstd{position}\hlopt{:\ }\hlstd{relative}\hlopt{;}\\
+\hllin{88\ }\hlstd{}\hlstd{\ \ }\hlstd{top}\hlopt{:\ }\hlstd{}\hlnum{0px}\hlstd{}\hlopt{;}\\
+\hllin{89\ }\hlstd{}\hlstd{\ \ }\hlstd{right}\hlopt{:\ }\hlstd{}\hlnum{20px}\hlstd{}\hlopt{;}\\
+\hllin{90\ }\hlstd{}\hlstd{\ \ }\hlstd{height}\hlopt{:\ }\hlstd{}\hlnum{30px}\hlstd{}\hlopt{;}\\
+\hllin{91\ }\hlstd{}\hlstd{\ \ }\hlstd{width}\hlopt{:\ }\hlstd{}\hlnum{30px}\hlstd{}\hlopt{;}\\
+\hllin{92\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{93\ }\hlstd{\ }\hlopt{.}\hlstd{error\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{94\ }\hlstd{}\hlstd{\ \ }\hlstd{box{-}shadow}\hlopt{:\ }\hlstd{}\hlnum{0px\ 0px\ 25px\ 5px\ }\hlstd{}\hlkwb{\$error{-}color\ }\hlstd{}\hlopt{!}\hlstd{important}\hlopt{;}\\
+\hllin{95\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{96\ }\hlstd{\ }\hlopt{\#}\hlstd{label\textunderscore error\textunderscore number\textunderscore check\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{97\ }\hlstd{}\hlstd{\ \ }\hlstd{position}\hlopt{:\ }\hlstd{relative}\hlopt{;}\\
+\hllin{98\ }\hlstd{}\hlstd{\ \ }\hlstd{top}\hlopt{:\ }\hlstd{}\hlnum{0px}\hlstd{}\hlopt{;}\\
+\hllin{99\ }\hlstd{}\hlstd{\ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$error{-}color}\hlstd{}\hlopt{;}\\
+\hllin{100\ }\hlstd{}\hlstd{\ \ }\hlstd{width}\hlopt{:\ }\hlstd{}\hlnum{100}\hlstd{}\hlopt{\%;}\\
+\hllin{101\ }\hlstd{}\hlstd{\ \ }\hlstd{text{-}align}\hlopt{:\ }\hlstd{center}\hlopt{;}\\
+\hllin{102\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{103\ }\hlstd{\\
+\hllin{104\ }\ }\hlopt{.}\hlstd{NB\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{105\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\&:}\hlstd{before\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{106\ }\hlstd{}\hlstd{\ \ \ }\hlstd{content}\hlopt{:\ }\hlstd{}\hlstr{'{*}\ '}\hlstd{}\hlopt{;}\\
+\hllin{107\ }\hlstd{}\hlstd{\ \ \ }\hlstd{color}\hlopt{:\ }\hlstd{red}\hlopt{;}\\
+\hllin{108\ }\hlstd{}\hlstd{\ \ \ }\hlstd{font{-}size}\hlopt{:\ }\hlstd{}\hlnum{14px}\hlstd{}\hlopt{;}\\
+\hllin{109\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{110\ }\hlstd{}\hlstd{\ \ }\hlstd{position}\hlopt{:\ }\hlstd{relative}\hlopt{;}\\
+\hllin{111\ }\hlstd{}\hlstd{\ \ }\hlstd{top}\hlopt{:\ }\hlstd{}\hlnum{0px}\hlstd{}\hlopt{;}\\
+\hllin{112\ }\hlstd{}\hlstd{\ \ }\hlstd{left}\hlopt{:\ }\hlstd{}\hlnum{5}\hlstd{}\hlopt{\%;}\\
+\hllin{113\ }\hlstd{}\hlstd{\ \ }\hlstd{width}\hlopt{:\ }\hlstd{}\hlnum{90}\hlstd{}\hlopt{\%;}\\
+\hllin{114\ }\hlstd{}\hlstd{\ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$secondary{-}text{-}color}\hlstd{}\hlopt{;}\\
+\hllin{115\ }\hlstd{}\hlstd{\ \ }\hlstd{font{-}size}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{116\ }\hlstd{}\hlstd{\ \ }\hlstd{margin}\hlopt{:\ }\hlstd{}\hlnum{0\ 2}\hlstd{}\hlopt{\%;}\\
+\hllin{117\ }\hlstd{\\
+\hllin{118\ }}\hlstd{\ \ }\hlstd{}\hlopt{\#}\hlstd{learnmore\textunderscore mnp\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{119\ }\hlstd{}\hlstd{\ \ \ }\hlstd{text{-}decoration}\hlopt{:\ }\hlstd{underline}\hlopt{;}\\
+\hllin{120\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cursor}\hlopt{:\ }\hlstd{pointer}\hlopt{;}\\
+\hllin{121\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlopt{\&:}\hlstd{hover\ }\hlopt{\usebox{\hlboxopenbrace}}\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$divider{-}color}\hlstd{}\hlopt{;\usebox{\hlboxclosebrace}}\\
+\hllin{122\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{123\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{124\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{125\ }\hlstd{}\\
+\hllin{126\ }\\
+\hllin{127\ }\hlopt{.}\hlstd{form\textunderscore request\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{128\ }\hlstd{\\
+\hllin{129\ }\\
+\hllin{130\ }\ position}\hlopt{:\ }\hlstd{relative}\hlopt{;}\\
+\hllin{131\ }\hlstd{\ transition}\hlopt{:\ }\hlstd{margin{-}top\ ease\ }\hlnum{0.2s\ 0.2s}\hlstd{}\hlopt{;}\\
+\hllin{132\ }\hlstd{\ border}\hlopt{:\ }\hlstd{solid\ }\hlnum{1px\ }\hlstd{}\hlkwb{\$divider{-}color}\hlstd{}\hlopt{;}\\
+\hllin{133\ }\hlstd{\ width}\hlopt{:\ }\hlstd{}\hlnum{90}\hlstd{}\hlopt{\%;}\\
+\hllin{134\ }\hlstd{\ margin{-}left}\hlopt{:\ }\hlstd{}\hlnum{5}\hlstd{}\hlopt{\%;}\\
+\hllin{135\ }\hlstd{\ z{-}index}\hlopt{:\ }\hlstd{}\hlnum{2}\hlstd{}\hlopt{;}\\
+\hllin{136\ }\hlstd{\ background{-}color}\hlopt{:\ }\hlstd{}\hlnum{\#FFF}\hlstd{}\hlopt{;}\\
+\hllin{137\ }\hlstd{\ }\hlkwc{@include\ }\hlstd{shadow\textunderscore lvl1}\hlopt{;}\\
+\hllin{138\ }\hlstd{\\
+\hllin{139\ }\ }\hlopt{\#}\hlstd{header\textunderscore form\textunderscore request\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{140\ }\hlstd{}\hlstd{\ \ }\hlstd{margin{-}left}\hlopt{:\ }\hlstd{}\hlnum{5}\hlstd{}\hlopt{\%;}\\
+\hllin{141\ }\hlstd{}\hlstd{\ \ }\hlstd{margin{-}bottom}\hlopt{:\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;}\\
+\hllin{142\ }\hlstd{}\hlstd{\ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$divider{-}color}\hlstd{}\hlopt{;}\\
+\hllin{143\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{144\ }\hlstd{\ }\hlopt{.}\hlstd{input\textunderscore tip\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{145\ }\hlstd{}\hlstd{\ \ }\hlstd{margin}\hlopt{:\ }\hlstd{}\hlnum{0\ 7}\hlstd{}\hlopt{\%\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{146\ }\hlstd{}\hlstd{\ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlnum{\#515151}\hlstd{}\hlopt{;}\\
+\hllin{147\ }\hlstd{}\hlstd{\ \ }\hlstd{font{-}size}\hlopt{:\ }\hlstd{smaller}\hlopt{;}\\
+\hllin{148\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\&:}\hlstd{before\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{149\ }\hlstd{}\hlstd{\ \ \ }\hlstd{content}\hlopt{:\ }\hlstd{}\hlstr{'{*}\ '}\hlstd{}\hlopt{;}\\
+\hllin{150\ }\hlstd{}\hlstd{\ \ \ }\hlstd{color}\hlopt{:\ }\hlstd{red}\hlopt{;}\\
+\hllin{151\ }\hlstd{}\hlstd{\ \ \ }\hlstd{font{-}size}\hlopt{:\ }\hlstd{}\hlnum{16px}\hlstd{}\hlopt{;}\\
+\hllin{152\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{153\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{154\ }\hlstd{\\
+\hllin{155\ }\ }\hlopt{\#}\hlstd{btn\textunderscore form\textunderscore request\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{156\ }\hlstd{}\hlstd{\ \ }\hlstd{margin}\hlopt{:\ }\hlstd{}\hlnum{20px\ }\hlstd{auto}\hlopt{;}\\
+\hllin{157\ }\hlstd{}\hlstd{\ \ }\hlstd{margin{-}left}\hlopt{:\ }\hlstd{}\hlnum{5}\hlstd{}\hlopt{\%;}\\
+\hllin{158\ }\hlstd{}\hlstd{\ \ }\hlstd{height}\hlopt{:\ }\hlstd{}\hlnum{40px}\hlstd{}\hlopt{;}\\
+\hllin{159\ }\hlstd{}\hlstd{\ \ }\hlstd{width}\hlopt{:\ }\hlstd{}\hlnum{150px}\hlstd{}\hlopt{;}\\
+\hllin{160\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{161\ }\hlstd{\ }\hlopt{\#}\hlstd{btn\textunderscore clear\textunderscore form\textunderscore request\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{162\ }\hlstd{}\hlstd{\ \ }\hlstd{height}\hlopt{:\ }\hlstd{}\hlnum{40px}\hlstd{}\hlopt{;}\\
+\hllin{163\ }\hlstd{}\hlstd{\ \ }\hlstd{margin{-}left}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{164\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{165\ }\hlstd{}\\
+\hllin{166\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{167\ }\hlstd{}\\
+\hllin{168\ }\hlopt{\#}\hlstd{error\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{169\ }\hlstd{\ position}\hlopt{:\ }\hlstd{fixed}\hlopt{;}\\
+\hllin{170\ }\hlstd{\ top}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{171\ }\hlstd{\ left}\hlopt{:\ }\hlstd{}\hlnum{10}\hlstd{}\hlopt{\%;}\\
+\hllin{172\ }\hlstd{\ width}\hlopt{:\ }\hlstd{}\hlnum{80}\hlstd{}\hlopt{\%;}\\
+\hllin{173\ }\hlstd{\ border}\hlopt{:\ }\hlstd{solid\ }\hlnum{1px\ \#BA5565}\hlstd{}\hlopt{;}\\
+\hllin{174\ }\hlstd{\ border{-}radius}\hlopt{:\ }\hlstd{}\hlnum{4px}\hlstd{}\hlopt{;}\\
+\hllin{175\ }\hlstd{\ background{-}color}\hlopt{:\ }\hlstd{}\hlnum{\#F2DEDE}\hlstd{}\hlopt{;}\\
+\hllin{176\ }\hlstd{\ padding}\hlopt{:\ }\hlstd{}\hlnum{0px}\hlstd{}\hlopt{;}\\
+\hllin{177\ }\hlstd{\ z{-}index}\hlopt{:\ }\hlstd{}\hlnum{100}\hlstd{}\hlopt{;}\\
+\hllin{178\ }\hlstd{\ }\hlkwc{@include\ }\hlstd{shadow\textunderscore lvl2}\hlopt{;}\\
+\hllin{179\ }\hlstd{\\
+\hllin{180\ }\ p\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{181\ }\hlstd{}\hlstd{\ \ }\hlstd{margin}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{182\ }\hlstd{}\hlstd{\ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlnum{\#A94442}\hlstd{}\hlopt{;}\\
+\hllin{183\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{184\ }\hlstd{\ span\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{185\ }\hlstd{}\hlstd{\ \ }\hlstd{position}\hlopt{:\ }\hlstd{absolute}\hlopt{;}\\
+\hllin{186\ }\hlstd{}\hlstd{\ \ }\hlstd{right}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{187\ }\hlstd{}\hlstd{\ \ }\hlstd{top}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{188\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\&:}\hlstd{hover\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{189\ }\hlstd{}\hlstd{\ \ \ }\hlstd{transform}\hlopt{:\ }\hlstd{}\hlkwd{scale}\hlstd{}\hlopt{(}\hlstd{}\hlnum{1.1}\hlstd{}\hlopt{);}\\
+\hllin{190\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cursor}\hlopt{:\ }\hlstd{pointer}\hlopt{;}\\
+\hllin{191\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{192\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{193\ }\hlstd{\ a\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{194\ }\hlstd{}\hlstd{\ \ }\hlstd{text{-}decoration}\hlopt{:\ }\hlstd{underline}\hlopt{;}\\
+\hllin{195\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\&:}\hlstd{hover\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{196\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cursor}\hlopt{:\ }\hlstd{pointer}\hlopt{;}\\
+\hllin{197\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{198\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{199\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{200\ }\hlstd{}\hlopt{.}\hlstd{hide\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{201\ }\hlstd{\ display}\hlopt{:\ }\hlstd{none}\hlopt{;}\\
+\hllin{202\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{203\ }\hlstd{}\hlopt{.}\hlstd{show\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{204\ }\hlstd{\ display}\hlopt{:\ }\hlstd{block}\hlopt{;}\\
+\hllin{205\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{206\ }\hlstd{\\
+\hllin{207\ }input}\hlopt{,}\\
+\hllin{208\ }\hlstd{select\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{209\ }\hlstd{\ position}\hlopt{:\ }\hlstd{relative}\hlopt{;}\\
+\hllin{210\ }\hlstd{\ top}\hlopt{:\ }\hlstd{}\hlnum{0px}\hlstd{}\hlopt{;}\\
+\hllin{211\ }\hlstd{\ padding}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{212\ }\hlstd{\ left}\hlopt{:\ }\hlstd{}\hlnum{5}\hlstd{}\hlopt{\%;}\\
+\hllin{213\ }\hlstd{\ height}\hlopt{:\ }\hlstd{}\hlnum{60px}\hlstd{}\hlopt{;}\\
+\hllin{214\ }\hlstd{\ width}\hlopt{:\ }\hlstd{}\hlnum{90}\hlstd{}\hlopt{\%;}\\
+\hllin{215\ }\hlstd{\ margin}\hlopt{:\ }\hlstd{}\hlnum{5px\ }\hlstd{auto}\hlopt{;}\\
+\hllin{216\ }\hlstd{\ font{-}size}\hlopt{:\ }\hlstd{x{-}large}\hlopt{;}\\
+\hllin{217\ }\hlstd{\ border}\hlopt{:\ }\hlstd{none}\hlopt{;}\\
+\hllin{218\ }\hlstd{\ }\hlkwc{@include\ }\hlstd{shadow\textunderscore lvl1}\hlopt{;}\\
+\hllin{219\ }\hlstd{}\\
+\hllin{220\ }\\
+\hllin{221\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{222\ }\hlstd{input}\hlopt{::}\hlstd{{-}webkit{-}input{-}placeholder\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{223\ }\hlstd{\ opacity}\hlopt{:\ }\hlstd{}\hlnum{0.5}\hlstd{}\hlopt{;}\\
+\hllin{224\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{225\ }\hlstd{\\
+\hllin{226\ }button\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{227\ }\hlstd{\ border}\hlopt{:\ }\hlstd{none}\hlopt{;}\\
+\hllin{228\ }\hlstd{\ border{-}radius}\hlopt{:\ }\hlstd{}\hlnum{2px}\hlstd{}\hlopt{;}\\
+\hllin{229\ }\hlstd{\ background{-}color}\hlopt{:\ }\hlstd{}\hlkwb{\$accent{-}color}\hlstd{}\hlopt{;}\\
+\hllin{230\ }\hlstd{\ color}\hlopt{:\ }\hlstd{}\hlkwb{\$primary{-}color{-}text}\hlstd{}\hlopt{;}\\
+\hllin{231\ }\hlstd{\ }\hlkwc{@include\ }\hlstd{shadow\textunderscore lvl1}\hlopt{;}\\
+\hllin{232\ }\hlstd{\ transform}\hlopt{:\ }\hlstd{}\hlkwd{scale}\hlstd{}\hlopt{(}\hlstd{}\hlnum{1}\hlstd{}\hlopt{);}\\
+\hllin{233\ }\hlstd{\ transition}\hlopt{:\ }\hlstd{all\ ease\ }\hlnum{0.2s}\hlstd{}\hlopt{;}\\
+\hllin{234\ }\hlstd{\\
+\hllin{235\ }\ }\hlopt{\&:}\hlstd{hover\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{236\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwc{@include\ }\hlstd{shadow\textunderscore lvl2}\hlopt{;}\\
+\hllin{237\ }\hlstd{}\hlstd{\ \ }\hlstd{transform}\hlopt{:\ }\hlstd{}\hlkwd{scale}\hlstd{}\hlopt{(}\hlstd{}\hlnum{1.03}\hlstd{}\hlopt{);}\\
+\hllin{238\ }\hlstd{}\hlstd{\ \ }\hlstd{transition}\hlopt{:\ }\hlstd{all\ ease\ }\hlnum{0.2s}\hlstd{}\hlopt{;}\\
+\hllin{239\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{240\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{241\ }\hlstd{}\\
+\hllin{242\ }\hlopt{.}\hlstd{update\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{243\ }\hlstd{\ }\hlkwc{@extend\ }\hlstd{}\hlopt{.}\hlstd{clearfix}\hlopt{;}\\
+\hllin{244\ }\hlstd{\ margin}\hlopt{:\ }\hlstd{}\hlnum{10px\ 0\ 0\ 5}\hlstd{}\hlopt{\%;}\\
+\hllin{245\ }\hlstd{\ float}\hlopt{:\ }\hlstd{left}\hlopt{;}\\
+\hllin{246\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{247\ }\hlstd{}\\
+\hllin{248\ }\hlopt{\#}\hlstd{btn\textunderscore update\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{249\ }\hlstd{\ margin}\hlopt{:\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;}\\
+\hllin{250\ }\hlstd{\ height}\hlopt{:\ }\hlstd{}\hlnum{40px}\hlstd{}\hlopt{;}\\
+\hllin{251\ }\hlstd{\ width}\hlopt{:\ }\hlstd{}\hlnum{150px}\hlstd{}\hlopt{;}\\
+\hllin{252\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{253\ }\hlstd{}\hlopt{.}\hlstd{last\textunderscore update\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{254\ }\hlstd{\ margin{-}top}\hlopt{:\ }\hlstd{}\hlnum{2px}\hlstd{}\hlopt{;}\\
+\hllin{255\ }\hlstd{\ display}\hlopt{:\ }\hlstd{block}\hlopt{;}\\
+\hllin{256\ }\hlstd{\ font{-}size}\hlopt{:\ }\hlstd{smaller}\hlopt{;}\\
+\hllin{257\ }\hlstd{\ color}\hlopt{:\ }\hlstd{}\hlkwb{\$divider{-}color}\hlstd{}\hlopt{;}\\
+\hllin{258\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{259\ }\hlstd{}\\
+\hllin{260\ }\hlopt{.}\hlstd{switch\textunderscore lang\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{261\ }\hlstd{\ }\hlkwc{@extend\ }\hlstd{}\hlopt{.}\hlstd{clearfix}\hlopt{;}\\
+\hllin{262\ }\hlstd{\ margin{-}top}\hlopt{:\ }\hlstd{}\hlnum{15px}\hlstd{}\hlopt{;}\\
+\hllin{263\ }\hlstd{\ margin{-}right}\hlopt{:\ }\hlstd{}\hlnum{5}\hlstd{}\hlopt{\%;}\\
+\hllin{264\ }\hlstd{\ float}\hlopt{:\ }\hlstd{right}\hlopt{;}\\
+\hllin{265\ }\hlstd{\\
+\hllin{266\ }\ }\hlopt{.}\hlstd{switch\textunderscore lang\textunderscore btn\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{267\ }\hlstd{}\hlstd{\ \ }\hlstd{float}\hlopt{:\ }\hlstd{right}\hlopt{;}\\
+\hllin{268\ }\hlstd{}\hlstd{\ \ }\hlstd{width}\hlopt{:\ }\hlstd{}\hlnum{40px}\hlstd{}\hlopt{;}\\
+\hllin{269\ }\hlstd{}\hlstd{\ \ }\hlstd{height}\hlopt{:\ }\hlstd{}\hlnum{26px}\hlstd{}\hlopt{;}\\
+\hllin{270\ }\hlstd{}\hlstd{\ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$primary{-}color{-}text}\hlstd{}\hlopt{;}\\
+\hllin{271\ }\hlstd{}\hlstd{\ \ }\hlstd{text{-}align}\hlopt{:\ }\hlstd{center}\hlopt{;}\\
+\hllin{272\ }\hlstd{}\hlstd{\ \ }\hlstd{background{-}color}\hlopt{:\ }\hlstd{}\hlkwb{\$accent{-}color}\hlstd{}\hlopt{;}\\
+\hllin{273\ }\hlstd{}\hlstd{\ \ }\hlstd{padding}\hlopt{:\ }\hlstd{}\hlnum{3px}\hlstd{}\hlopt{;}\\
+\hllin{274\ }\hlstd{\\
+\hllin{275\ }}\hlstd{\ \ }\hlstd{}\hlopt{\&:}\hlstd{hover\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{276\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cursor}\hlopt{:\ }\hlstd{pointer}\hlopt{;}\\
+\hllin{277\ }\hlstd{}\hlstd{\ \ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$primary{-}color{-}text}\hlstd{}\hlopt{;}\\
+\hllin{278\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{279\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{280\ }\hlstd{\ }\hlopt{\#}\hlstd{btn\textunderscore ru\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{281\ }\hlstd{}\hlstd{\ \ }\hlstd{border{-}top{-}left{-}radius}\hlopt{:\ }\hlstd{}\hlnum{2px}\hlstd{}\hlopt{;}\\
+\hllin{282\ }\hlstd{}\hlstd{\ \ }\hlstd{border{-}bottom{-}left{-}radius}\hlopt{:\ }\hlstd{}\hlnum{2px}\hlstd{}\hlopt{;}\\
+\hllin{283\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{284\ }\hlstd{\ }\hlopt{\#}\hlstd{btn\textunderscore en\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{285\ }\hlstd{}\hlstd{\ \ }\hlstd{border{-}top{-}right{-}radius}\hlopt{:\ }\hlstd{}\hlnum{2px}\hlstd{}\hlopt{;}\\
+\hllin{286\ }\hlstd{}\hlstd{\ \ }\hlstd{border{-}bottom{-}right{-}radius}\hlopt{:\ }\hlstd{}\hlnum{2px}\hlstd{}\hlopt{;}\\
+\hllin{287\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{288\ }\hlstd{\ }\hlopt{.}\hlstd{not\textunderscore pressed\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{289\ }\hlstd{}\hlstd{\ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$divider{-}color}\hlstd{}\hlopt{;}\\
+\hllin{290\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwc{@include\ }\hlstd{shadow\textunderscore lvl1}\hlopt{;}\\
+\hllin{291\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{292\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{293\ }\hlstd{}\\
+\hllin{294\ }\hlopt{.}\hlstd{change\textunderscore path\textunderscore block\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{295\ }\hlstd{\ border}\hlopt{:\ }\hlstd{solid\ }\hlnum{1px\ }\hlstd{}\hlkwb{\$divider{-}color}\hlstd{}\hlopt{;}\\
+\hllin{296\ }\hlstd{\ }\hlkwc{@include\ }\hlstd{shadow\textunderscore lvl1}\hlopt{;}\\
+\hllin{297\ }\hlstd{\ padding}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{298\ }\hlstd{\ }\hlopt{\#}\hlstd{currPath\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{299\ }\hlstd{}\hlstd{\ \ }\hlstd{display}\hlopt{:\ }\hlstd{block}\hlopt{;}\\
+\hllin{300\ }\hlstd{}\hlstd{\ \ }\hlstd{word{-}wrap}\hlopt{:\ }\hlstd{break{-}word}\hlopt{;}\\
+\hllin{301\ }\hlstd{}\hlstd{\ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$divider{-}color}\hlstd{}\hlopt{;}\\
+\hllin{302\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{303\ }\hlstd{\ }\hlopt{\#}\hlstd{saveTo\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{304\ }\hlstd{}\hlstd{\ \ }\hlstd{display}\hlopt{:\ }\hlstd{block}\hlopt{;}\\
+\hllin{305\ }\hlstd{}\hlstd{\ \ }\hlstd{word{-}wrap}\hlopt{:\ }\hlstd{break{-}word}\hlopt{;}\\
+\hllin{306\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{307\ }\hlstd{\ }\hlopt{\#}\hlstd{change\textunderscore path\textunderscore button\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{308\ }\hlstd{}\hlstd{\ \ }\hlstd{margin{-}top}\hlopt{:\ }\hlstd{}\hlnum{10px}\hlstd{}\hlopt{;}\\
+\hllin{309\ }\hlstd{}\hlstd{\ \ }\hlstd{width}\hlopt{:\ }\hlstd{}\hlnum{160px}\hlstd{}\hlopt{;}\\
+\hllin{310\ }\hlstd{}\hlstd{\ \ }\hlstd{height}\hlopt{:\ }\hlstd{}\hlnum{40px}\hlstd{}\hlopt{;}\\
+\hllin{311\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{312\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{313\ }\hlstd{\\
+\hllin{314\ }footer\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{315\ }\hlstd{\ position}\hlopt{:\ }\hlstd{fixed}\hlopt{;}\\
+\hllin{316\ }\hlstd{\ width}\hlopt{:\ }\hlstd{}\hlnum{100}\hlstd{}\hlopt{\%;}\\
+\hllin{317\ }\hlstd{\ bottom}\hlopt{:\ }\hlstd{}\hlnum{0px}\hlstd{}\hlopt{;}\\
+\hllin{318\ }\hlstd{\ text{-}align}\hlopt{:\ }\hlstd{center}\hlopt{;}\\
+\hllin{319\ }\hlstd{\ color}\hlopt{:\ }\hlstd{}\hlkwb{\$secondary{-}text{-}color}\hlstd{}\hlopt{;}\\
+\hllin{320\ }\hlstd{\ z{-}index}\hlopt{:\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{;}\\
+\hllin{321\ }\hlstd{\\
+\hllin{322\ }\ p\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{323\ }\hlstd{}\hlstd{\ \ }\hlstd{margin}\hlopt{:\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;}\\
+\hllin{324\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{325\ }\hlstd{\ a\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{326\ }\hlstd{}\hlstd{\ \ }\hlstd{text{-}decoration}\hlopt{:\ }\hlstd{underline}\hlopt{;}\\
+\hllin{327\ }\hlstd{}\hlstd{\ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$secondary{-}text{-}color}\hlstd{}\hlopt{;}\\
+\hllin{328\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\&:}\hlstd{hover\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{329\ }\hlstd{}\hlstd{\ \ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$divider{-}color}\hlstd{}\hlopt{;}\\
+\hllin{330\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cursor}\hlopt{:\ }\hlstd{pointer}\hlopt{;}\\
+\hllin{331\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{332\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{333\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{334\ }\hlstd{}\\
+\hllin{335\ }\\
+\hllin{336\ }\hlopt{.}\hlstd{ui{-}autocomplete\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{337\ }\hlstd{\ list{-}style{-}type}\hlopt{:\ }\hlstd{none}\hlopt{;}\\
+\hllin{338\ }\hlstd{\ background{-}color}\hlopt{:\ }\hlstd{}\hlnum{\#ffffff}\hlstd{}\hlopt{;}\\
+\hllin{339\ }\hlstd{\ border}\hlopt{:\ }\hlstd{solid\ }\hlnum{1px\ }\hlstd{}\hlkwb{\$divider{-}color}\hlstd{}\hlopt{;}\\
+\hllin{340\ }\hlstd{\ width}\hlopt{:\ }\hlstd{}\hlnum{76}\hlstd{}\hlopt{\%;}\\
+\hllin{341\ }\hlstd{\ z{-}index}\hlopt{:\ }\hlstd{}\hlnum{10\ }\hlstd{}\hlopt{!}\hlstd{important}\hlopt{;}\\
+\hllin{342\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{343\ }\hlstd{}\hlopt{.}\hlstd{ui{-}state{-}focus\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{344\ }\hlstd{\ color}\hlopt{:\ }\hlstd{}\hlkwb{\$accent{-}color}\hlstd{}\hlopt{;}\\
+\hllin{345\ }\hlstd{\ cursor}\hlopt{:\ }\hlstd{pointer}\hlopt{;}\\
+\hllin{346\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{347\ }\hlstd{}\\
+\hllin{348\ }\hlopt{.}\hlstd{ui{-}helper{-}hidden{-}accessible\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{349\ }\hlstd{\ display}\hlopt{:\ }\hlstd{none}\hlopt{;}\\
+\hllin{350\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{351\ }\hlstd{}\\
+\hllin{352\ }\hlopt{.}\hlstd{modal\textunderscore wrapper}\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{353\ }\hlstd{\ position}\hlopt{:\ }\hlstd{fixed}\hlopt{;}\\
+\hllin{354\ }\hlstd{\ top}\hlopt{:\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;}\\
+\hllin{355\ }\hlstd{\ left}\hlopt{:\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;}\\
+\hllin{356\ }\hlstd{\ width}\hlopt{:\ }\hlstd{}\hlnum{100}\hlstd{}\hlopt{\%;}\\
+\hllin{357\ }\hlstd{\ height}\hlopt{:\ }\hlstd{}\hlnum{100}\hlstd{}\hlopt{\%;}\\
+\hllin{358\ }\hlstd{\ background{-}color}\hlopt{:\ }\hlstd{}\hlnum{\#FFF}\hlstd{}\hlopt{;}\\
+\hllin{359\ }\hlstd{\ opacity}\hlopt{:\ }\hlstd{}\hlnum{0.8}\hlstd{}\hlopt{;}\\
+\hllin{360\ }\hlstd{\ z{-}index}\hlopt{:\ }\hlstd{}\hlnum{1000}\hlstd{}\hlopt{;}\\
+\hllin{361\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{362\ }\hlstd{}\hlopt{.}\hlstd{modal\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{363\ }\hlstd{\\
+\hllin{364\ }\ position}\hlopt{:\ }\hlstd{fixed\ }\hlopt{!}\hlstd{important}\hlopt{;}\\
+\hllin{365\ }\hlstd{\ width}\hlopt{:\ }\hlstd{}\hlnum{70}\hlstd{}\hlopt{\%\ !}\hlstd{important}\hlopt{;}\\
+\hllin{366\ }\hlstd{\ max{-}height}\hlopt{:\ }\hlstd{}\hlnum{80}\hlstd{}\hlopt{\%;}\\
+\hllin{367\ }\hlstd{\ }\hlslc{//\ height:\ 80\%;}\\
+\hllin{368\ }\hlstd{\ top}\hlopt{:\ }\hlstd{}\hlnum{5}\hlstd{}\hlopt{\%;}\\
+\hllin{369\ }\hlstd{\ transition}\hlopt{:\ }\hlstd{top\ ease\ }\hlnum{0.2s}\hlstd{}\hlopt{;}\\
+\hllin{370\ }\hlstd{\ left}\hlopt{:\ }\hlstd{}\hlnum{15}\hlstd{}\hlopt{\%;}\\
+\hllin{371\ }\hlstd{\ background{-}color}\hlopt{:\ }\hlstd{}\hlkwb{\$primary{-}color{-}text}\hlstd{}\hlopt{;}\\
+\hllin{372\ }\hlstd{\ }\hlkwc{@include\ }\hlstd{shadow\textunderscore lvl5}\hlopt{;}\\
+\hllin{373\ }\hlstd{\ padding}\hlopt{:\ }\hlstd{}\hlnum{20px}\hlstd{}\hlopt{;}\\
+\hllin{374\ }\hlstd{\\
+\hllin{375\ }\ z{-}index}\hlopt{:\ }\hlstd{}\hlnum{1001}\hlstd{}\hlopt{;}\\
+\hllin{376\ }\hlstd{\\
+\hllin{377\ }\ }\hlopt{.}\hlstd{nano{-}content\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{378\ }\hlstd{}\hlstd{\ \ }\hlstd{padding}\hlopt{:\ }\hlstd{}\hlnum{20px\ }\hlstd{}\hlopt{!}\hlstd{important}\hlopt{;}\\
+\hllin{379\ }\hlstd{}\hlstd{\ \ }\hlstd{h3\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{380\ }\hlstd{}\hlstd{\ \ \ }\hlstd{margin}\hlopt{:\ }\hlstd{}\hlnum{10px\ 0\ 5px\ 0}\hlstd{}\hlopt{;}\\
+\hllin{381\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{382\ }\hlstd{}\hlstd{\ \ }\hlstd{h4\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{383\ }\hlstd{}\hlstd{\ \ \ }\hlstd{margin}\hlopt{:\ }\hlstd{}\hlnum{5px\ 0\ 5px\ 0}\hlstd{}\hlopt{;}\\
+\hllin{384\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{385\ }\hlstd{}\hlstd{\ \ }\hlstd{p\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{386\ }\hlstd{}\hlstd{\ \ \ }\hlstd{margin}\hlopt{:\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;}\\
+\hllin{387\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{388\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{389\ }\hlstd{\ a\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{390\ }\hlstd{}\hlstd{\ \ }\hlstd{text{-}decoration}\hlopt{:\ }\hlstd{underline}\hlopt{;}\\
+\hllin{391\ }\hlstd{}\hlstd{\ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$secondary{-}text{-}color}\hlstd{}\hlopt{;}\\
+\hllin{392\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\&:}\hlstd{hover\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{393\ }\hlstd{}\hlstd{\ \ \ }\hlstd{color}\hlopt{:\ }\hlstd{}\hlkwb{\$divider{-}color}\hlstd{}\hlopt{;}\\
+\hllin{394\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cursor}\hlopt{:\ }\hlstd{pointer}\hlopt{;}\\
+\hllin{395\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{396\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{397\ }\hlstd{\\
+\hllin{398\ }\ }\hlopt{\#}\hlstd{btn\textunderscore modal\textunderscore ok\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{399\ }\hlstd{}\hlstd{\ \ }\hlstd{width}\hlopt{:\ }\hlstd{}\hlnum{80px}\hlstd{}\hlopt{;}\\
+\hllin{400\ }\hlstd{}\hlstd{\ \ }\hlstd{height}\hlopt{:\ }\hlstd{}\hlnum{30px}\hlstd{}\hlopt{;}\\
+\hllin{401\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{402\ }\hlstd{\ }\hlopt{.}\hlstd{export\textunderscore btn\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{403\ }\hlstd{}\hlstd{\ \ }\hlstd{width}\hlopt{:\ }\hlstd{}\hlnum{160px}\hlstd{}\hlopt{;}\\
+\hllin{404\ }\hlstd{}\hlstd{\ \ }\hlstd{height}\hlopt{:\ }\hlstd{}\hlnum{40px}\hlstd{}\hlopt{;}\\
+\hllin{405\ }\hlstd{}\hlstd{\ \ }\hlstd{margin{-}right}\hlopt{:\ }\hlstd{}\hlnum{15px}\hlstd{}\hlopt{;}\\
+\hllin{406\ }\hlstd{}\hlstd{\ \ }\hlstd{margin{-}top}\hlopt{:\ }\hlstd{}\hlnum{15px}\hlstd{}\hlopt{;}\\
+\hllin{407\ }\hlstd{\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{408\ }\hlstd{}\\
+\hllin{409\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{410\ }\hlstd{}\hlopt{\#}\hlstd{loading\textunderscore anim\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{411\ }\hlstd{\ position}\hlopt{:\ }\hlstd{fixed}\hlopt{;}\\
+\hllin{412\ }\hlstd{\ left}\hlopt{:\ }\hlstd{}\hlnum{50}\hlstd{}\hlopt{\%;}\\
+\hllin{413\ }\hlstd{\ top}\hlopt{:\ }\hlstd{}\hlnum{50}\hlstd{}\hlopt{\%;}\\
+\hllin{414\ }\hlstd{\ margin}\hlopt{:\ }\hlstd{{-}32\ {-}32\ }\hlnum{0\ 0}\hlstd{}\hlopt{;}\\
+\hllin{415\ }\hlstd{\ z{-}index}\hlopt{:\ }\hlstd{}\hlnum{1001}\hlstd{}\hlopt{;}\\
+\hllin{416\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{417\ }\hlstd{}\hlopt{.}\hlstd{preinit\ }\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{418\ }\hlstd{\ margin{-}top}\hlopt{:\ }\hlstd{}\hlnum{100}\hlstd{}\hlopt{\%;}\\
+\hllin{419\ }\hlstd{\ top}\hlopt{:\ }\hlstd{}\hlnum{110}\hlstd{}\hlopt{\%;}\\
+\hllin{420\ }\hlstd{\ transition}\hlopt{:\ }\hlstd{all\ ease\ }\hlnum{0.4s}\hlstd{}\hlopt{;}\\
+\hllin{421\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{422\ }\hlstd{}\\
+\hllin{423\ }\\
+\hllin{424\ }\hlslc{//\ {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}\ CHOSEN\ PLUGIN\ STYLE\ {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}\\
+\hllin{425\ }\hlstd{}\hlopt{\usebox{\hlboxlessthan}...\usebox{\hlboxgreaterthan}}\\
+\hllin{426\ }\hlstd{}\hlslc{//\ {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}\ END\ CHOSEN\ STYLE}\\
+\hllin{427\ }\hlstd{}\hlslc{//\ {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}\ GITHUB\ RIBBON\ STYLE}\\
+\hllin{428\ }\hlstd{}\hlopt{\usebox{\hlboxlessthan}...\usebox{\hlboxgreaterthan}}\\
+\hllin{429\ }\hlstd{}\hlslc{//{-}{-}{-}{-}{-}{-}{-}{-}\ END\ GITHUB\ RIBBON\ STYLE}\hlstd{}\\
+\mbox{}
+\normalfont
+\normalsize

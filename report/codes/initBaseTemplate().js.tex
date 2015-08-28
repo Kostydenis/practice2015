@@ -1,0 +1,91 @@
+\noindent
+\ttfamily
+\hlstd{}\hllin{\ 1\ }\hlkwa{function\ }\hlstd{}\hlkwd{initBaseTemplate}\hlstd{}\hlopt{()\ \usebox{\hlboxopenbrace}}\\
+\hllin{\ 2\ }\hlstd{\\
+\hllin{\ 3\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{tip\ }\hlopt{=\ }\hlstd{}\hlstr{\dq{}\dq{}}\hlstd{}\hlopt{;}\\
+\hllin{\ 4\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{os}\hlopt{.}\hlstd{}\hlkwd{platform}\hlstd{}\hlopt{()\ ===\ }\hlstd{}\hlstr{'darwin'}\hlstd{}\hlopt{)\ \usebox{\hlboxopenbrace}}\\
+\hllin{\ 5\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{tip\ }\hlopt{=\ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}p\ class=\dq{}input\textunderscore tip\dq{}\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{+}\hlstd{lang}\hlopt{.}\hlstd{input\textunderscore tip\textunderscore mac}\hlopt{+}\hlstd{}\hlstr{'\usebox{\hlboxlessthan}}\Righttorque\\
+\hllin{\ 6\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ }\hlstr{/p\usebox{\hlboxgreaterthan}'}\hlstd{\\
+\hllin{\ 7\ }}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{\ 8\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{tip\ }\hlopt{=\ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}p\ class=\dq{}input\textunderscore tip\dq{}\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{+}\hlstd{lang}\hlopt{.}\hlstd{input\textunderscore tip\textunderscore win}\hlopt{+}\hlstd{}\hlstr{'\usebox{\hlboxlessthan}}\Righttorque\\
+\hllin{\ 9\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ }\hlstr{/p\usebox{\hlboxgreaterthan}'}\hlstd{\\
+\hllin{10\ }}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{langbuttons}\hlopt{;}\\
+\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{chosenLang\ }\hlopt{===\ }\hlstd{}\hlstr{'ru'}\hlstd{}\hlopt{)\ \usebox{\hlboxopenbrace}}\\
+\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{langbuttons\ }\hlopt{=}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ id=\dq{}btn\textunderscore en\dq{}\ class=\dq{}switch\textunderscore lang\textunderscore btn\ }\Righttorque\\
+\hllin{15\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstr{not\textunderscore pressed\dq{}\usebox{\hlboxgreaterthan}en\usebox{\hlboxlessthan}/div\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ id=\dq{}btn\textunderscore ru\dq{}\ class=\dq{}switch\textunderscore lang\textunderscore btn\dq{}\usebox{\hlboxgreaterthan}ru\usebox{\hlboxlessthan}}\Righttorque\\
+\hllin{17\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstr{/div\usebox{\hlboxgreaterthan}'}\hlstd{\\
+\hllin{18\ }}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\usebox{\hlboxopenbrace}}\\
+\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{langbuttons\ }\hlopt{=}\\
+\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ id=\dq{}btn\textunderscore en\dq{}\ class=\dq{}switch\textunderscore lang\textunderscore btn\dq{}\usebox{\hlboxgreaterthan}en\usebox{\hlboxlessthan}}\Righttorque\\
+\hllin{21\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstr{/div\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ id=\dq{}btn\textunderscore ru\dq{}\ class=\dq{}switch\textunderscore lang\textunderscore btn\ }\Righttorque\\
+\hllin{23\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstr{not\textunderscore pressed\dq{}\usebox{\hlboxgreaterthan}ru\usebox{\hlboxlessthan}/div\usebox{\hlboxgreaterthan}'}\hlstd{\\
+\hllin{24\ }}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{25\ }\hlstd{\\
+\hllin{26\ }}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'body'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{empty}\hlstd{}\hlopt{();}\\
+\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'body'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\\
+\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ id=\dq{}modal\textunderscore wrapper\dq{}\ class=\dq{}modal\textunderscore wrapper\ hide\dq{}\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}}\Righttorque\\
+\hllin{29\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ }\hlstr{/div\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ id=\dq{}modal\dq{}\ class=\dq{}modal\ preinit\dq{}\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/div\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}img\ id=\dq{}loading\textunderscore anim\dq{}\ class=\dq{}hide\dq{}\ }\Righttorque\\
+\hllin{32\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ }\hlstr{src=\dq{}\textunderscore pics/loading.gif\dq{}\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{+}\\
+\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}header\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}img\ src=\dq{}\textunderscore pics/sled\textunderscore hero.png\dq{}\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}h1\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/h1\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/header\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{37\ }\hlstd{\\
+\hllin{38\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ class=\dq{}content\dq{}\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{39\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ id=\dq{}error\dq{}\ class=\dq{}hide\dq{}\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{+}\\
+\hllin{40\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/div\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{+}\\
+\hllin{41\ }\hlstd{\\
+\hllin{42\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ class=\dq{}block\textunderscore number\textunderscore check\ preinit\dq{}\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}input\ type=\dq{}text\dq{}\ id=\dq{}input\textunderscore number\textunderscore check\dq{}\ }\Righttorque\\
+\hllin{44\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstr{/\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{45\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}button\ id=\dq{}button\textunderscore number\textunderscore check\dq{}\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}span\ }\Righttorque\\
+\hllin{46\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstr{class=\dq{}glyphicon\ glyphicon{-}search\dq{}\ aria{-}}\Righttorque\\
+\hllin{47\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstr{hidden=\dq{}true\dq{}\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/span\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/button\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{48\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}p\ class=\dq{}NB\dq{}\ id=\dq{}note\textunderscore mnp\dq{}\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/p\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{49\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/div\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{50\ }\hlstd{\\
+\hllin{51\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ class=\dq{}form\textunderscore request\ preinit\dq{}\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{52\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}h2\ id=\dq{}header\textunderscore form\textunderscore request\dq{}\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/h2\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{53\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{tip\ }\hlopt{+}\\
+\hllin{54\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}select\ id=\dq{}input\textunderscore locations\dq{}\ class=\dq{}chosen{-}}\Righttorque\\
+\hllin{55\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstr{select\dq{}\ multiple\ \usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{56\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/select\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{57\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}select\ id=\dq{}input\textunderscore providers\dq{}\ class=\dq{}chosen{-}}\Righttorque\\
+\hllin{58\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstr{select\dq{}\ multiple\ \usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{59\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/select\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{60\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}select\ id=\dq{}input\textunderscore defs\dq{}\ class=\dq{}chosen{-}}\Righttorque\\
+\hllin{61\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstr{select\dq{}\ multiple\ \usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{62\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/select\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{63\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}button\ id=\dq{}btn\textunderscore form\textunderscore request\dq{}\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/button\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{64\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}button\ id=\dq{}btn\textunderscore clear\textunderscore form\textunderscore request\dq{}\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}}\Righttorque\\
+\hllin{65\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstr{/button\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{66\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/div\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{67\ }\hlstd{\\
+\hllin{68\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ class=\dq{}update\dq{}\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{69\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}button\ id=\dq{}btn\textunderscore update\dq{}\ \usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/button\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{70\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}span\ class=\dq{}last\textunderscore update\dq{}\usebox{\hlboxgreaterthan}2015{-}08{-}3\usebox{\hlboxlessthan}/span\usebox{\hlboxgreaterthan}'}\hlstd{\ \Righttorque\\
+\hllin{71\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{+}\\
+\hllin{72\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/div\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{73\ }\hlstd{\\
+\hllin{74\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}div\ class=\dq{}switch\textunderscore lang\dq{}\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{75\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{langbuttons\ }\hlopt{+}\\
+\hllin{76\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/div\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{77\ }\hlstd{\\
+\hllin{78\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/div\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{79\ }\hlstd{\\
+\hllin{80\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}footer\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{81\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}p\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}a\ id=\dq{}btn\textunderscore author\dq{}\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/a\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/p\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{82\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}p\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}a\ id=\dq{}btn\textunderscore about\dq{}\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/a\usebox{\hlboxgreaterthan}\usebox{\hlboxlessthan}/p\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{83\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}p\ id=\dq{}lbl\textunderscore year\dq{}\usebox{\hlboxgreaterthan}2015\usebox{\hlboxlessthan}/p\usebox{\hlboxgreaterthan}'}\hlstd{\ }\hlopt{+}\\
+\hllin{84\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/footer\usebox{\hlboxgreaterthan}'}\hlstd{\\
+\hllin{85\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{);}\\
+\hllin{86\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\hlstd{}\\
+\mbox{}
+\normalfont
+\normalsize

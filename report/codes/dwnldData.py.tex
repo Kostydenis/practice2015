@@ -1,0 +1,115 @@
+\noindent
+\ttfamily
+\hlstd{}\hllin{\ \ 1\ }\hlkwa{import\ }\hlstd{sys}\\
+\hllin{\ \ 2\ }\hlkwa{from\ }\hlstd{datetime\ }\hlkwa{import\ }\hlstd{datetime}\\
+\hllin{\ \ 3\ }\hlkwa{import\ }\hlstd{requests}\\
+\hllin{\ \ 4\ }\hlkwa{import\ }\hlstd{json}\\
+\hllin{\ \ 5\ }\hlkwa{from\ }\hlstd{bs4\ }\hlkwa{import\ }\hlstd{BeautifulSoup}\\
+\hllin{\ \ 6\ }\\
+\hllin{\ \ 7\ }\hlslc{\#\ if\ script\ started\ with\ date{-}argument\ then\ download\ base\ }\Righttorque\\
+\hllin{\ \ 8\ }\hlslc{for\ that\ date}\\
+\hllin{\ \ 9\ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlkwb{len}\hlstd{}\hlopt{(}\hlstd{sys}\hlopt{.}\hlstd{argv}\hlopt{)\ \usebox{\hlboxgreaterthan}\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{:}\\
+\hllin{\ 10\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{dwnldate\ }\hlopt{=\ }\hlstd{sys}\hlopt{.}\hlstd{argv}\hlopt{{[}}\hlstd{}\hlnum{1}\hlstd{}\hlopt{{]}}\\
+\hllin{\ 11\ }\hlstd{}\hlkwa{else}\hlstd{}\hlopt{:}\\
+\hllin{\ 12\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{dwnldate\ }\hlopt{=\ }\hlstd{datetime}\hlopt{.}\hlstd{}\hlkwd{strftime}\hlstd{}\hlopt{(}\hlstd{datetime}\hlopt{.}\hlstd{}\hlkwd{now}\hlstd{}\hlopt{(),\ }\hlstd{}\hlstr{\dq{}}\hlipl{\%d}\hlstr{.\%m.\%Y\dq{}}\hlstd{}\hlopt{)}\\
+\hllin{\ 13\ }\hlstd{}\\
+\hllin{\ 14\ }\hlslc{\#\ check\ os\ and\ set\ right\ path\ to\ base}\\
+\hllin{\ 15\ }\hlstd{}\hlslc{\#\ NB!\ basePath\ is\ path\ without\ extension}\\
+\hllin{\ 16\ }\hlstd{}\hlkwa{if\ }\hlstd{sys}\hlopt{.}\hlstd{platform\ }\hlopt{==\ }\hlstd{}\hlstr{'win32'}\hlstd{}\hlopt{:}\\
+\hllin{\ 17\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{basePath\ }\hlopt{=\ }\hlstd{}\hlstr{'../base/base'}\hlstd{}\\
+\hllin{\ 18\ }\hlkwa{elif\ }\hlstd{sys}\hlopt{.}\hlstd{platform\ }\hlopt{==\ }\hlstd{}\hlstr{'darwin'}\hlstd{}\hlopt{:}\\
+\hllin{\ 19\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{basePath\ }\hlopt{=\ }\hlstd{}\hlstr{'../../../../base/base'}\hlstd{}\\
+\hllin{\ 20\ }\hlkwa{else}\hlstd{}\hlopt{:}\\
+\hllin{\ 21\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'You\ are\ running\ on\ unsupported\ OS.'}\hlstd{}\hlopt{)}\\
+\hllin{\ 22\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'Or\ cygwin\ under\ the\ Windows\ (run\ in\ cmd)'}\hlstd{}\hlopt{)}\\
+\hllin{\ 23\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{raise\ }\hlstd{}\hlkwc{SystemExit}\hlstd{}\hlopt{(}\hlstd{}\hlnum{1}\hlstd{}\hlopt{)\ }\hlstd{}\hlslc{\#\ exit\ with\ code\ 1\ (error)}\\
+\hllin{\ 24\ }\hlstd{}\\
+\hllin{\ 25\ }\hlslc{\#\ collecting\ data\ from\ mtt.ru}\\
+\hllin{\ 26\ }\hlstd{}\\
+\hllin{\ 27\ }\hlslc{\#\ form\ request}\\
+\hllin{\ 28\ }\hlstd{data\ }\hlopt{=\ \usebox{\hlboxopenbrace}}\\
+\hllin{\ 29\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlstr{'g'}\hlstd{}\hlopt{:\ }\hlstd{}\hlstr{'mtt'}\hlstd{}\hlopt{,}\\
+\hllin{\ 30\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlstr{'m'}\hlstd{}\hlopt{:\ }\hlstd{}\hlstr{'def\textunderscore codes'}\hlstd{}\hlopt{,}\\
+\hllin{\ 31\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlstr{'a'}\hlstd{}\hlopt{:\ }\hlstd{}\hlstr{'processRequest'}\hlstd{}\hlopt{,}\\
+\hllin{\ 32\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlstr{'def'}\hlstd{}\hlopt{:\ }\hlstd{}\hlstr{\dq{}{*}\dq{}}\hlstd{}\hlopt{,}\\
+\hllin{\ 33\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlstr{'def\textunderscore number'}\hlstd{}\hlopt{:\ }\hlstd{}\hlstr{\dq{}\dq{}}\hlstd{}\hlopt{,}\\
+\hllin{\ 34\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlstr{'area'}\hlstd{}\hlopt{:\ }\hlstd{}\hlstr{\dq{}{*}\dq{}}\hlstd{}\hlopt{,}\\
+\hllin{\ 35\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlstr{'operator'}\hlstd{}\hlopt{:\ }\hlstd{}\hlstr{\dq{}{*}\dq{}}\hlstd{}\hlopt{,}\\
+\hllin{\ 36\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlstr{'standard'}\hlstd{}\hlopt{:\ }\hlstd{}\hlstr{\dq{}{*}\dq{}}\hlstd{}\hlopt{,}\\
+\hllin{\ 37\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlstr{'date'}\hlstd{}\hlopt{:\ }\hlstd{dwnldate}\\
+\hllin{\ 38\ }\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{\ 39\ }\hlstd{}\\
+\hllin{\ 40\ }\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'Starting\ downloading'}\hlstd{}\hlopt{)}\\
+\hllin{\ 41\ }\hlstd{}\\
+\hllin{\ 42\ }\hlslc{\#\ send\ request}\\
+\hllin{\ 43\ }\hlstd{r\ }\hlopt{=\ }\hlstd{requests}\hlopt{.}\hlstd{}\hlkwd{post}\hlstd{}\hlopt{(}\hlstd{}\hlstr{\dq{}http://www.mtt.ru/?callback=?\dq{}}\hlstd{}\hlopt{,\ }\Righttorque\\
+\hllin{\ 44\ }\hlstd{params}\hlopt{=}\hlstd{data}\hlopt{)}\\
+\hllin{\ 45\ }\hlstd{}\\
+\hllin{\ 46\ }\hlslc{\#\ parse\ from\ json}\\
+\hllin{\ 47\ }\hlstd{r\ }\hlopt{=\ }\hlstd{r}\hlopt{.}\hlstd{}\hlkwd{json}\hlstd{}\hlopt{()}\\
+\hllin{\ 48\ }\hlstd{}\\
+\hllin{\ 49\ }\hlkwa{if\ }\hlstd{r}\hlopt{.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'status'}\hlstd{}\hlopt{)\ ==\ }\hlstd{}\hlstr{'success'}\hlstd{}\hlopt{:}\\
+\hllin{\ 50\ }\hlstd{\ }\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'Download\ was\ successful'}\hlstd{}\hlopt{)}\\
+\hllin{\ 51\ }\hlstd{}\hlkwa{elif\ }\hlstd{r}\hlopt{.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'status'}\hlstd{}\hlopt{)\ ==\ }\hlstd{}\hlstr{'captcha'}\hlstd{}\hlopt{:}\\
+\hllin{\ 52\ }\hlstd{\ }\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'Too\ many\ requests\ from\ your\ IP.\ Try\ again\ later.'}\hlstd{}\hlopt{)}\\
+\hllin{\ 53\ }\hlstd{\ }\hlkwa{raise\ }\hlstd{}\hlkwc{SystemExit}\hlstd{}\hlopt{(}\hlstd{}\hlnum{1}\hlstd{}\hlopt{)\ }\hlstd{}\hlslc{\#\ exit\ with\ code\ 1\ (error)}\\
+\hllin{\ 54\ }\hlstd{}\hlkwa{else}\hlstd{}\hlopt{:}\\
+\hllin{\ 55\ }\hlstd{\ }\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'Something\ went\ wrong.\ Download\ was\ unsuccessful'}\hlstd{}\hlopt{)}\\
+\hllin{\ 56\ }\hlstd{\ }\hlkwa{raise\ }\hlstd{}\hlkwc{SystemExit}\hlstd{}\hlopt{(}\hlstd{}\hlnum{1}\hlstd{}\hlopt{)\ }\hlstd{}\hlslc{\#\ exit\ with\ code\ 1\ (error)}\\
+\hllin{\ 57\ }\hlstd{}\\
+\hllin{\ 58\ }\hlslc{\#\ take\ html{-}table\ with\ data}\\
+\hllin{\ 59\ }\hlstd{r\ }\hlopt{=\ }\hlstd{r}\hlopt{.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'resultHTML'}\hlstd{}\hlopt{)}\\
+\hllin{\ 60\ }\hlstd{}\hlslc{\#\ r\ =\ \dq{}\usebox{\hlboxlessthan}table\usebox{\hlboxgreaterthan}$\backslash$r$\backslash$n\dq{}\ +\ r\ +\ \dq{}$\backslash$r$\backslash$n\usebox{\hlboxlessthan}/table\usebox{\hlboxgreaterthan}\dq{}}\\
+\hllin{\ 61\ }\hlstd{}\\
+\hllin{\ 62\ }\hlslc{\#\ write\ html{-}table\ into\ file}\\
+\hllin{\ 63\ }\hlstd{with\ }\hlkwb{open}\hlstd{}\hlopt{(}\hlstd{basePath}\hlopt{+}\hlstd{}\hlstr{\dq{}.html\dq{}}\hlstd{}\hlopt{,\ }\hlstd{}\hlstr{\dq{}w\dq{}}\hlstd{}\hlopt{,\ }\hlstd{encoding}\hlopt{=}\hlstd{}\hlstr{'utf{-}8'}\hlstd{}\hlopt{)\ }\hlstd{}\hlkwa{as\ }\hlstd{f}\hlopt{:}\\
+\hllin{\ 64\ }\hlstd{\ f}\hlopt{.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{r}\hlopt{)}\\
+\hllin{\ 65\ }\hlstd{}\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'Starting\ parsing'}\hlstd{}\hlopt{)}\\
+\hllin{\ 66\ }\hlstd{base\ }\hlopt{=\ }\hlstd{}\hlkwb{dict}\hlstd{}\hlopt{()}\\
+\hllin{\ 67\ }\hlstd{}\\
+\hllin{\ 68\ }\hlslc{\#\ creating\ object\ for\ html{-}parser}\\
+\hllin{\ 69\ }\hlstd{html\ }\hlopt{=\ }\hlstd{}\hlkwd{BeautifulSoup}\hlstd{}\hlopt{(}\hlstd{r}\hlopt{,\ }\hlstd{}\hlstr{'html.parser'}\hlstd{}\hlopt{)}\\
+\hllin{\ 70\ }\hlstd{}\\
+\hllin{\ 71\ }\hlslc{\#\ for\ each\ row\ of\ table}\\
+\hllin{\ 72\ }\hlstd{}\hlslc{\#\ get\ each\ cell\ of\ row}\\
+\hllin{\ 73\ }\hlstd{}\hlslc{\#\ if\ location\ or\ provider\ of\ def{-}code\ doesnt\ exist,\ create\ }\Righttorque\\
+\hllin{\ 74\ }\hlslc{dict{-}entity\ in\ base{-}dictionary}\\
+\hllin{\ 75\ }\hlstd{}\hlkwa{for\ }\hlstd{row\ }\hlkwa{in\ }\hlstd{html}\hlopt{.}\hlstd{}\hlkwd{findAll}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'tr'}\hlstd{}\hlopt{):}\\
+\hllin{\ 76\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{row}\hlopt{.}\hlstd{}\hlkwd{findAll}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'th'}\hlstd{}\hlopt{):\ }\hlstd{}\hlslc{\#\ save\ header\ of\ table}\\
+\hllin{\ 77\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{headers\ }\hlopt{=\ }\hlstd{row}\hlopt{.}\hlstd{}\hlkwd{findAll}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'th'}\hlstd{}\hlopt{)}\\
+\hllin{\ 78\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{else}\hlstd{}\hlopt{:}\\
+\hllin{\ 79\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{cell\ }\hlopt{=\ }\hlstd{row}\hlopt{.}\hlstd{}\hlkwd{findAll}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'td'}\hlstd{}\hlopt{)}\\
+\hllin{\ 80\ }\hlstd{\\
+\hllin{\ 81\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{intvl\textunderscore head\ }\hlopt{=\ }\hlstd{headers}\hlopt{{[}}\hlstd{}\hlnum{1}\hlstd{}\hlopt{{]}.}\hlstd{text\\
+\hllin{\ 82\ }\\
+\hllin{\ 83\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{code\ }\hlopt{=\ }\hlstd{cell}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]}.}\hlstd{text\\
+\hllin{\ 84\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{intvl\ }\hlopt{=\ }\hlstd{cell}\hlopt{{[}}\hlstd{}\hlnum{1}\hlstd{}\hlopt{{]}.}\hlstd{text\\
+\hllin{\ 85\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{loc\ }\hlopt{=\ }\hlstd{cell}\hlopt{{[}}\hlstd{}\hlnum{2}\hlstd{}\hlopt{{]}.}\hlstd{text\\
+\hllin{\ 86\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{prov\ }\hlopt{=\ }\hlstd{cell}\hlopt{{[}}\hlstd{}\hlnum{3}\hlstd{}\hlopt{{]}.}\hlstd{strong}\hlopt{.}\hlstd{text\\
+\hllin{\ 87\ }\\
+\hllin{\ 88\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{loc\ }\hlkwa{not\ in\ }\hlstd{base}\hlopt{:}\\
+\hllin{\ 89\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{base}\hlopt{{[}}\hlstd{loc}\hlopt{{]}\ =\ }\hlstd{}\hlkwb{dict}\hlstd{}\hlopt{()}\\
+\hllin{\ 90\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{prov\ }\hlkwa{not\ in\ }\hlstd{base}\hlopt{{[}}\hlstd{loc}\hlopt{{]}:}\\
+\hllin{\ 91\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{base}\hlopt{{[}}\hlstd{loc}\hlopt{{]}{[}}\hlstd{prov}\hlopt{{]}\ =\ }\hlstd{}\hlkwb{dict}\hlstd{}\hlopt{()}\\
+\hllin{\ 92\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{code\ }\hlkwa{not\ in\ }\hlstd{base}\hlopt{{[}}\hlstd{loc}\hlopt{{]}{[}}\hlstd{prov}\hlopt{{]}:}\\
+\hllin{\ 93\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{base}\hlopt{{[}}\hlstd{loc}\hlopt{{]}{[}}\hlstd{prov}\hlopt{{]}{[}}\hlstd{code}\hlopt{{]}\ =\ }\hlstd{}\hlkwb{dict}\hlstd{}\hlopt{()}\\
+\hllin{\ 94\ }\hlstd{\\
+\hllin{\ 95\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{base}\hlopt{{[}}\hlstd{loc}\hlopt{{]}{[}}\hlstd{prov}\hlopt{{]}{[}}\hlstd{code}\hlopt{{]}.}\hlstd{}\hlkwd{update}\hlstd{}\hlopt{(\usebox{\hlboxopenbrace}}\hlstd{intvl}\hlopt{:\ \usebox{\hlboxopenbrace}\usebox{\hlboxclosebrace}\usebox{\hlboxclosebrace})}\\
+\hllin{\ 96\ }\hlstd{}\\
+\hllin{\ 97\ }\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'Parsing\ was\ successful'}\hlstd{}\hlopt{)}\\
+\hllin{\ 98\ }\hlstd{}\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'Exporting\ to\ JSON'}\hlstd{}\hlopt{)}\\
+\hllin{\ 99\ }\hlstd{}\\
+\hllin{100\ }\hlslc{\#\ export\ to\ JSON{-}format}\\
+\hllin{101\ }\hlstd{with\ }\hlkwb{open}\hlstd{}\hlopt{(}\hlstd{basePath}\hlopt{+}\hlstd{}\hlstr{'.json'}\hlstd{}\hlopt{,\ }\hlstd{}\hlstr{'w'}\hlstd{}\hlopt{,\ }\hlstd{encoding}\hlopt{=}\hlstd{}\hlstr{'utf{-}8'}\hlstd{}\hlopt{)\ }\hlstd{}\hlkwa{as\ }\Righttorque\\
+\hllin{102\ }\hlstd{outfile}\hlopt{:}\\
+\hllin{103\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{json}\hlopt{.}\hlstd{}\hlkwd{dump}\hlstd{}\hlopt{(}\hlstd{base}\hlopt{,\ }\hlstd{outfile}\hlopt{,\ }\hlstd{sort\textunderscore keys}\hlopt{=}\hlstd{}\hlkwa{True}\hlstd{}\hlopt{,\ }\hlstd{indent}\hlopt{=}\hlstd{}\hlnum{4}\hlstd{}\hlopt{,\ }\Righttorque\\
+\hllin{104\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{ensure\textunderscore ascii}\hlopt{=}\hlstd{}\hlkwa{False}\hlstd{}\hlopt{)}\\
+\hllin{105\ }\hlstd{}\\
+\hllin{106\ }\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'Exporting\ was\ successful'}\hlstd{}\hlopt{)}\\
+\hllin{107\ }\hlstd{}\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'Exiting...'}\hlstd{}\hlopt{)}\\
+\hllin{108\ }\hlstd{}\\
+\hllin{109\ }\hlslc{\#\ exit\ with\ code\ 0\ (with\ no\ errors)}\\
+\hllin{110\ }\hlstd{}\hlkwa{raise\ }\hlstd{}\hlkwc{SystemExit}\hlstd{}\hlopt{(}\hlstd{}\hlnum{0}\hlstd{}\hlopt{)}\hlstd{}\\
+\mbox{}
+\normalfont
+\normalsize

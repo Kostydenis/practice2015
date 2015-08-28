@@ -1,4 +1,4 @@
-# practice2015 (v.0.4.4)
+# practice2015 (v1.0.0) RELEASE
 My practice work. DEF-codes html parser.
 
 ## Известные проблемы
@@ -7,8 +7,8 @@ My practice work. DEF-codes html parser.
 
 ## Планы
 
+- minimize js-file
 - вывод в excel-файлы по областям с вкладками по провайдерам
-- remove dev-files
 - compress with UPX
 
 

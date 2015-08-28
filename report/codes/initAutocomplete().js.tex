@@ -1,0 +1,52 @@
+\noindent
+\ttfamily
+\hlstd{}\hllin{\ 1\ }\hlkwa{function\ }\hlstd{}\hlkwd{initAutocomplete}\hlstd{}\hlopt{()\ \usebox{\hlboxopenbrace}}\\
+\hllin{\ 2\ }\hlstd{\\
+\hllin{\ 3\ }}\hlstd{\ \ \ \ }\hlstd{locations\ }\hlopt{=\ }\hlstd{}\hlkwd{getLocations}\hlstd{}\hlopt{();}\\
+\hllin{\ 4\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{providers\ }\hlopt{=\ {[}{]};}\\
+\hllin{\ 5\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{defs\ }\hlopt{=\ {[}{]};}\\
+\hllin{\ 6\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore locations'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{empty}\hlstd{}\hlopt{();}\\
+\hllin{\ 7\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore providers'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{empty}\hlstd{}\hlopt{();}\\
+\hllin{\ 8\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore defs'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{empty}\hlstd{}\hlopt{();}\\
+\hllin{\ 9\ }\hlstd{\\
+\hllin{10\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{idProv\ }\hlopt{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{;}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{idDef\ }\hlopt{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{;}\\
+\hllin{12\ }\hlstd{\\
+\hllin{13\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlopt{(}\hlstd{loc\ }\hlkwa{in\ }\hlstd{locations}\hlopt{)\ \usebox{\hlboxopenbrace}}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore locations'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'\usebox{\hlboxlessthan}option\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{+}\hlstd{locations}\hlopt{{[}}\Righttorque\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{loc}\hlopt{{]}+}\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/option\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{);}\\
+\hllin{16\ }\hlstd{\\
+\hllin{17\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore providers'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'\usebox{\hlboxlessthan}optgroup\ label=\dq{}'}\hlstd{}\hlopt{+}\Righttorque\\
+\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{locations}\hlopt{{[}}\hlstd{loc}\hlopt{{]}+}\hlstd{}\hlstr{'\dq{}\ id=\dq{}provider\textunderscore optgroup'}\hlstd{}\hlopt{+\ }\hlstd{idProv\ }\hlopt{+}\hlstd{}\hlstr{'\dq{}\usebox{\hlboxgreaterthan}}\Righttorque\\
+\hllin{19\ }\hlstr{}\hlstd{\ \ \ \ \ \ \ \ }\hlstr{'}\hlstd{}\hlopt{);}\\
+\hllin{20\ }\hlstd{\\
+\hllin{21\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{tmpProviders\ }\hlopt{=\ }\hlstd{}\hlkwd{getProviders}\hlstd{}\hlopt{(}\hlstd{locations}\hlopt{{[}}\hlstd{loc}\hlopt{{]});}\\
+\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlopt{(}\hlstd{prov\ }\hlkwa{in\ }\hlstd{tmpProviders}\hlopt{)\usebox{\hlboxopenbrace}}\\
+\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{providers}\hlopt{.}\hlstd{}\hlkwd{push}\hlstd{}\hlopt{(}\hlstd{tmpProviders}\hlopt{{[}}\hlstd{prov}\hlopt{{]});}\\
+\hllin{24\ }\hlstd{\\
+\hllin{25\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore providers\ \#provider\textunderscore optgroup'}\hlstd{}\hlopt{+}\hlstd{idProv}\hlopt{).}\Righttorque\\
+\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'\usebox{\hlboxlessthan}option\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{+}\hlstd{tmpProviders}\hlopt{{[}}\hlstd{prov}\hlopt{{]}+}\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/option\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{)}\Righttorque\\
+\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{;}\\
+\hllin{28\ }\hlstd{\\
+\hllin{29\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{tmpDefs\ }\hlopt{=\ }\hlstd{}\hlkwd{getDefs}\hlstd{}\hlopt{(}\hlstd{locations}\hlopt{{[}}\hlstd{loc}\hlopt{{]},\ }\Righttorque\\
+\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{tmpProviders}\hlopt{{[}}\hlstd{prov}\hlopt{{]});}\\
+\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore defs'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'\usebox{\hlboxlessthan}optgroup\ label=\dq{}'}\hlstd{}\hlopt{+}\Righttorque\\
+\hllin{32\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{tmpProviders}\hlopt{{[}}\hlstd{prov}\hlopt{{]}.}\hlstd{}\hlkwd{replace}\hlstd{}\hlopt{(}\hlstd{}\hlkwc{/\dq{}({[}\textasciicircum \dq{}{]}+)\dq{}/g}\hlstd{}\hlopt{,\ }\Righttorque\\
+\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'«\$1»'}\hlstd{}\hlopt{)+}\hlstd{}\hlstr{'\dq{}\ id=\dq{}def\textunderscore optgroup'}\hlstd{}\hlopt{+\ }\hlstd{idDef\ }\hlopt{+}\hlstd{}\hlstr{'\dq{}\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{);}\\
+\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlopt{(}\hlstd{def\ }\hlkwa{in\ }\hlstd{tmpDefs}\hlopt{)\ \usebox{\hlboxopenbrace}}\\
+\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{defs}\hlopt{.}\hlstd{}\hlkwd{push}\hlstd{}\hlopt{(}\hlstd{tmpDefs}\hlopt{{[}}\hlstd{def}\hlopt{{]});}\\
+\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore defs\ \#def\textunderscore optgroup'}\hlstd{}\hlopt{+}\hlstd{idDef}\hlopt{).}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\Righttorque\\
+\hllin{37\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{'\usebox{\hlboxlessthan}option\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{+}\hlstd{tmpDefs}\hlopt{{[}}\hlstd{def}\hlopt{{]}+}\hlstd{}\hlstr{'\usebox{\hlboxlessthan}/option\usebox{\hlboxgreaterthan}'}\hlstd{}\hlopt{);}\\
+\hllin{38\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{39\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{idDef}\hlopt{++;}\\
+\hllin{40\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{41\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{idProv}\hlopt{++;}\\
+\hllin{42\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\\
+\hllin{43\ }\hlstd{\\
+\hllin{44\ }}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore locations'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{trigger}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'chosen:updated'}\hlstd{}\hlopt{);}\\
+\hllin{45\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore providers'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{trigger}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'chosen:updated'}\hlstd{}\hlopt{);}\\
+\hllin{46\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\$(}\hlstd{}\hlstr{'\#input\textunderscore defs'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{trigger}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'chosen:updated'}\hlstd{}\hlopt{);}\\
+\hllin{47\ }\hlstd{}\hlopt{\usebox{\hlboxclosebrace}}\hlstd{}\\
+\mbox{}
+\normalfont
+\normalsize

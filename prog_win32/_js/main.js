@@ -6,7 +6,7 @@ var exec = require("child_process").exec;
 var spawn = require("child_process").spawn;
 var excelbuilder = require('msexcel-builder');
 
-var logging = false;
+var logging = true;
 
 var lang;
 var chosenLang = 'ru';
@@ -21,10 +21,11 @@ var chosenDefs = [];
 
 var saveTo;
 if (os.platform() === 'darwin') {
-    saveTo = window.location.pathname.slice(0, -10);
+    saveTo = decodeURI(window.location.pathname.slice(0, -10));
 } else {
-    saveTo = window.location.pathname.slice(1, -10);
+    saveTo = decodeURI(window.location.pathname.slice(1, -10));
 }
+
 
 var logFileDate = new Date();
 logFileDate = logFileDate.toLocaleString().replace(/[:]|, |[.]/g, '-');
@@ -33,7 +34,7 @@ var logFilePath = 'logs/' + logFileDate + '.txt';
 function log(msg) {
     if (logging) {
         var date = new Date();
-        date = date.toLocaleTimeString().replace(/[:]|, |[.]/g, '-');
+        date = date.toLocaleString().replace(/[:]|, |[.]/g, '-');
         msg = date + ': ' + msg + '\r\n';
         fs.appendFileSync(logFilePath, msg);
     }
@@ -45,7 +46,6 @@ log('OS Type: '+os.type());
 log('OS Release: '+os.release());
 log('OS Arch: '+os.arch());
 log('OS Hostname: '+os.hostname());
-
 
 function init() {
 
@@ -441,8 +441,6 @@ function initAutocomplete() {
     $('#input_locations').empty();
     $('#input_providers').empty();
     $('#input_defs').empty();
-
-
 
     var idProv = 1;
     var idDef = 1;
@@ -953,7 +951,7 @@ function chooseFile() {
     var val;
     chooser.unbind('change');
     chooser.change(function(evt) {
-        saveTo = $(this).val() + '/';
+        saveTo = decodeURI($(this).val() + '/');
         $('#saveTo').text(saveTo);
     });
 
