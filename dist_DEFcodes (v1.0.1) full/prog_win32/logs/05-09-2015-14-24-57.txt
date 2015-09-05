@@ -1,0 +1,17 @@
+05-09-2015-14-24-57: Application is launched
+05-09-2015-14-24-57: OS Platform: win32
+05-09-2015-14-24-57: OS Type: Windows_NT
+05-09-2015-14-24-57: OS Release: 6.1.7601
+05-09-2015-14-24-57: OS Arch: ia32
+05-09-2015-14-24-57: OS Hostname: Denis-PC
+05-09-2015-14-24-57: Begin initialization
+05-09-2015-14-24-57: Chosen language file is ru
+05-09-2015-14-24-57: Extended template is initialized
+05-09-2015-14-24-57: Staring initialization of base
+05-09-2015-14-24-57: Begin parsing lang-JSON
+05-09-2015-14-24-57: Basic template is initialized
+05-09-2015-14-24-57: Starting initialization of basic template
+05-09-2015-14-24-57: starting initialization of extended template
+05-09-2015-14-24-58: base is opened
+05-09-2015-14-24-58: locations is formed
+05-09-2015-14-25-14: Export modal is opened

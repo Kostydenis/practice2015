@@ -743,7 +743,7 @@ function exportToExcel() {
 
                 var tmpProviders = getProviders(chosenLocations[loc]);
                 for (prov in tmpProviders) {
-
+                    sheet.set(1, line++, 'НАЧАЛО: '+tmpProviders[prov]);
                     var tmpDefs = getDefs(chosenLocations[loc], tmpProviders[prov]);
                     for (def in tmpDefs) {
                         var tmpInterval = getInterval(chosenLocations[loc], tmpProviders[prov], tmpDefs[def]);
@@ -754,6 +754,7 @@ function exportToExcel() {
                             }
                         }
                     }
+                    sheet.set(1, line++, 'КОНЕЦ: '+tmpProviders[prov]);
                 }
             }
         } else {
@@ -764,7 +765,7 @@ function exportToExcel() {
 
                 var tmpProviders = getProviders(chosenLocations[loc]);
                 for (prov in tmpProviders) {
-
+                    sheet.set(1, line++, 'НАЧАЛО: '+tmpProviders[prov]);
                     for (def in chosenDefs) {
                         if ( $.inArray(chosenDefs[def], getDefs(chosenLocations[loc],tmpProviders[prov])) != -1 ) {
                             var tmpInterval = getInterval(chosenLocations[loc], tmpProviders[prov], chosenDefs[def]);
@@ -776,6 +777,7 @@ function exportToExcel() {
                             }
                         }
                     }
+                    sheet.set(1, line++, 'КОНЕЦ: '+tmpProviders[prov]);
                 }
             }
         }
@@ -787,6 +789,7 @@ function exportToExcel() {
                 var line = 1;
 
                 for (prov in chosenProviders) {
+                    sheet.set(1, line++, 'НАЧАЛО: '+chosenProviders[prov]);
                     if ( $.inArray(chosenProviders[prov], getProviders(chosenLocations[loc])) != -1 ) {
                         var tmpDefs = getDefs(chosenLocations[loc], chosenProviders[prov]);
                         for (def in tmpDefs) {
@@ -799,6 +802,7 @@ function exportToExcel() {
                             }
                         }
                     }
+                    sheet.set(1, line++, 'КОНЕЦ: '+chosenProviders[prov]);
                 }
             }
         } else {
@@ -808,6 +812,7 @@ function exportToExcel() {
                 var line = 1;
 
                 for (prov in chosenProviders) {
+                    sheet.set(1, line++, 'НАЧАЛО: '+chosenProviders[prov]);
                     if ( $.inArray(chosenProviders[prov], getProviders(chosenLocations[loc])) != -1 ) {
                         for (def in chosenDefs) {
                             if ( $.inArray(chosenDefs[def], getDefs(chosenLocations[loc],chosenProviders[prov])) != -1 ) {
@@ -821,6 +826,7 @@ function exportToExcel() {
                             }
                         }
                     }
+                    sheet.set(1, line++, 'КОНЕЦ: '+chosenProviders[prov]);
                 }
             }
         }
@@ -955,7 +961,16 @@ function chooseFile() {
         $('#saveTo').text(saveTo);
     });
 
-    chooser.trigger('click');  
+    chooser.trigger('click');
+}
+function makeUnique(A) {
+    var n = A.length, k = 0, B = [];
+    for (var i = 0; i < n; i++)
+     { var j = 0;
+       while (j < k && B[j] !== A[i]) j++;
+       if (j == k) B[k++] = A[i];
+     }
+    return B;
 }
 
 function openExportModal() {
@@ -988,6 +1003,8 @@ function openExportModal() {
     $('.modal').removeClass('preinit');
 
     buildChoose();
+    chosenProviders = makeUnique(chosenProviders);
+    chosenDefs = makeUnique(chosenDefs);
     exportToScreen();
 
     $('#modal-content').append('<button class="export_btn" id="export_to_txt_2">' + lang.export_to_txt + '</button>');

@@ -1,0 +1,1038 @@
+@import "fonts.scss";
+
+$primary-color-light:  #7B1FA2;
+$primary-color:        #9C27B0;
+$primary-color-light:  #E1BEE7;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #607D8B;
+$primary-text-color:   #212121;
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+$error-color: rgba(240,0,0,0.8);
+
+@mixin shadow_lvl1 {
+	box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+@mixin shadow_lvl2 {
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+@mixin shadow_lvl5 {
+	box-shadow: 0px 0px 15px 7px rgba(0, 0, 0, 0.5);
+}
+
+.clearfix {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+@font-face {
+    font-family: Roboto;
+    src: local("Roboto");
+    src: url(../_fonts/Roboto.ttf);
+}
+
+body {
+	font-family: Roboto;
+}
+
+header {
+	h1 {
+		position: absolute;
+		top: 0;
+		right: 10px;
+		font-size: x-large;
+		color: $primary-color-text;
+		text-shadow: 0px 0px 20px rgba(0,0,0,1);
+	}
+	img {
+		position: relative;
+		width: 100%;
+		-webkit-filter: opacity(.6);
+	}
+}
+
+.content {
+	margin-bottom: 100px;
+	position: relative;
+	z-index: 5;
+}
+
+.block_number_check {
+
+	position: relative;
+	margin-top: -15px;
+	margin-bottom: 10px;
+	width: 100%;
+	transition: margin-top ease 0.2s;
+
+	#input_number_check {
+		position: relative;
+		top: 0px;
+		padding: 10px;
+		left: 5%;
+		height: 60px;
+		width: 90%;
+		margin: 0 auto;
+		font-size: x-large;
+		border: none;
+		@include shadow_lvl1;
+	}
+
+	#button_number_check {
+		position: relative;
+		top: 0px;
+		right: 20px;
+		height: 30px;
+		width: 30px;
+	}
+	.error {
+		box-shadow: 0px 0px 25px 5px $error-color !important;
+	}
+	#label_error_number_check {
+		position: relative;
+		top: 0px;
+		color: $error-color;
+		width: 100%;
+		text-align: center;
+	}
+
+	.NB {
+		&:before {
+			content: '* ';
+			color: red;
+			font-size: 14px;
+		}
+		position: relative;
+		top: 0px;
+		left: 5%;
+		width: 90%;
+		color: $secondary-text-color;
+		font-size: 10px;
+		margin: 0 2%;
+
+		#learnmore_mnp {
+			text-decoration: underline;
+			cursor: pointer;
+			&:hover {color: $divider-color;}
+		}
+	}
+}
+
+
+.form_request {
+
+
+	position: relative;
+	transition: margin-top ease 0.2s 0.2s;
+	border: solid 1px $divider-color;
+	width: 90%;
+	margin-left: 5%;
+	z-index: 2;
+	background-color: #FFF;
+	@include shadow_lvl1;
+
+	#header_form_request {
+		margin-left: 5%;
+		margin-bottom: 0;
+		color: $divider-color;
+	}
+	.input_tip {
+		margin: 0 7% 10px;
+		color: #515151;
+		font-size: smaller;
+		&:before {
+			content: '* ';
+			color: red;
+			font-size: 16px;
+		}
+	}
+
+	#btn_form_request {
+		margin: 20px auto;
+		margin-left: 5%;
+		height: 40px;
+		width: 150px;
+	}
+	#btn_clear_form_request {
+		height: 40px;
+		margin-left: 10px;
+	}
+
+}
+
+#error {
+	position: fixed;
+	top: 10px;
+	left: 10%;
+	width: 80%;
+	border: solid 1px #BA5565;
+	border-radius: 4px;
+	background-color: #F2DEDE;
+	padding: 0px;
+	z-index: 100;
+	@include shadow_lvl2;
+
+	p {
+		margin: 10px;
+		color: #A94442;
+	}
+	span {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		&:hover {
+			transform: scale(1.1);
+			cursor: pointer;
+		}
+	}
+	a {
+		text-decoration: underline;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
+
+input,
+select {
+	position: relative;
+	top: 0px;
+	padding: 10px;
+	left: 5%;
+	height: 60px;
+	width: 90%;
+	margin: 5px auto;
+	font-size: x-large;
+	border: none;
+	@include shadow_lvl1;
+
+
+}
+input::-webkit-input-placeholder {
+	opacity: 0.5;
+}
+
+button {
+	border: none;
+	border-radius: 2px;
+	background-color: $accent-color;
+	color: $primary-color-text;
+	@include shadow_lvl1;
+	transform: scale(1);
+	transition: all ease 0.2s;
+
+	&:hover {
+		@include shadow_lvl2;
+		transform: scale(1.03);
+		transition: all ease 0.2s;
+	}
+}
+
+.update {
+	@extend .clearfix;
+	margin: 10px 0 0 5%;
+	float: left;
+}
+
+#btn_update {
+	margin: 0;
+	height: 40px;
+	width: 150px;
+}
+.last_update {
+	margin-top: 2px;
+	display: block;
+	font-size: smaller;
+	color: $divider-color;
+}
+
+.switch_lang {
+	@extend .clearfix;
+	margin-top: 15px;
+	margin-right: 5%;
+	float: right;
+
+	.switch_lang_btn {
+		float: right;
+		width: 40px;
+		height: 26px;
+		color: $primary-color-text;
+		text-align: center;
+		background-color: $accent-color;
+		padding: 3px;
+
+		&:hover {
+			cursor: pointer;
+			color: $primary-color-text;
+		}
+	}
+	#btn_ru {
+		border-top-left-radius: 2px;
+		border-bottom-left-radius: 2px;
+	}
+	#btn_en {
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;
+	}
+	.not_pressed {
+		color: $divider-color;
+		@include shadow_lvl1;
+	}
+}
+
+.change_path_block {
+	border: solid 1px $divider-color;
+	@include shadow_lvl1;
+	padding: 10px;
+	#currPath {
+		display: block;
+		word-wrap: break-word;
+		color: $divider-color;
+	}
+	#saveTo {
+		display: block;
+		word-wrap: break-word;
+	}
+	#change_path_button {
+		margin-top: 10px;
+		width: 160px;
+		height: 40px;
+	}
+}
+
+footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+	text-align: center;
+	color: $secondary-text-color;
+	z-index: 1;
+
+	p {
+		margin: 0;
+	}
+	a {
+		text-decoration: underline;
+		color: $secondary-text-color;
+		&:hover {
+			color: $divider-color;
+			cursor: pointer;
+		}
+	}
+}
+
+
+.ui-autocomplete {
+	list-style-type: none;
+	background-color: #ffffff;
+	border: solid 1px $divider-color;
+	width: 76%;
+	z-index: 10 !important;
+}
+.ui-state-focus {
+	color: $accent-color;
+	cursor: pointer;
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
+
+.modal_wrapper{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+	opacity: 0.8;
+	z-index: 1000;
+}
+.modal {
+
+	position: fixed !important;
+	width: 70% !important;
+	max-height: 80%;
+	// height: 80%;
+	top: 5%;
+	transition: top ease 0.2s;
+	left: 15%;
+	background-color: $primary-color-text;
+	@include shadow_lvl5;
+	padding: 20px;
+
+	z-index: 1001;
+
+	.nano-content {
+		padding: 20px !important;
+		h3 {
+			margin: 10px 0 5px 0;
+		}
+		h4 {
+			margin: 5px 0 5px 0;
+		}
+		p {
+			margin: 0;
+		}
+	}
+	a {
+		text-decoration: underline;
+		color: $secondary-text-color;
+		&:hover {
+			color: $divider-color;
+			cursor: pointer;
+		}
+	}
+
+	#btn_modal_ok {
+		width: 80px;
+		height: 30px;
+	}
+	.export_btn {
+		width: 160px;
+		height: 40px;
+		margin-right: 15px;
+		margin-top: 15px;
+	}
+
+}
+#loading_anim {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -32 -32 0 0;
+	z-index: 1001;
+}
+.preinit {
+	margin-top: 100%;
+	top: 110%;
+	transition: all ease 0.4s;
+}
+
+
+// --------------- CHOSEN PLUGIN STYLE -----------------
+/* Chosen v1.4.2 | (c) 2011-2015 by Harvest | MIT License, https://github.com/harvesthq/chosen/blob/master/LICENSE.md */
+
+.chosen-container {
+    position: relative;
+    display: block;
+    width: 90% !important;
+    margin-top: 10px;
+    margin-left: 5%;
+    vertical-align: middle;
+    font-size: 13px;
+    zoom: 1;
+    *display: inline;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.chosen-container * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.chosen-container .chosen-drop {
+    position: absolute;
+    top: 100%;
+    left: -9999px;
+    z-index: 1010;
+    width: 100%;
+    border: 1px solid #aaa;
+    border-top: 0;
+    background: #fff;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+}
+
+.chosen-container.chosen-with-drop .chosen-drop {
+    left: 0;
+}
+
+.chosen-container a {
+    cursor: pointer;
+}
+
+.chosen-container .search-choice .group-name, .chosen-container .chosen-single .group-name {
+    margin-right: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    color: #999;
+}
+
+.chosen-container .search-choice .group-name:after, .chosen-container .chosen-single .group-name:after {
+    content: ":";
+    padding-left: 2px;
+    vertical-align: top;
+}
+
+.chosen-container-single .chosen-single {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0 0 0 8px;
+    height: 25px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background-color: #fff;
+    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(20%, #fff), color-stop(50%, #f6f6f6), color-stop(52%, #eee), color-stop(100%, #f4f4f4));
+    background: -webkit-linear-gradient(top, #fff 20%, #f6f6f6 50%, #eee 52%, #f4f4f4 100%);
+    background: -moz-linear-gradient(top, #fff 20%, #f6f6f6 50%, #eee 52%, #f4f4f4 100%);
+    background: -o-linear-gradient(top, #fff 20%, #f6f6f6 50%, #eee 52%, #f4f4f4 100%);
+    background: linear-gradient(top, #fff 20%, #f6f6f6 50%, #eee 52%, #f4f4f4 100%);
+    background-clip: padding-box;
+    box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #444;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 24px;
+}
+
+.chosen-container-single .chosen-default {
+    color: #999;
+}
+
+.chosen-container-single .chosen-single span {
+    display: block;
+    overflow: hidden;
+    margin-right: 26px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chosen-container-single .chosen-single-with-deselect span {
+    margin-right: 38px;
+}
+
+.chosen-container-single .chosen-single abbr {
+    position: absolute;
+    top: 6px;
+    right: 26px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url(chosen-sprite.png) -42px 1px no-repeat;
+    font-size: 1px;
+}
+
+.chosen-container-single .chosen-single abbr:hover {
+    background-position: -42px -10px;
+}
+
+.chosen-container-single.chosen-disabled .chosen-single abbr:hover {
+    background-position: -42px -10px;
+}
+
+.chosen-container-single .chosen-single div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 18px;
+    height: 100%;
+}
+
+.chosen-container-single .chosen-single div b {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(chosen-sprite.png) no-repeat 0 2px;
+}
+
+.chosen-container-single .chosen-search {
+    position: relative;
+    z-index: 1010;
+    margin: 0;
+    padding: 3px 4px;
+    white-space: nowrap;
+}
+
+.chosen-container-single .chosen-search input[type=text] {
+    margin: 1px 0;
+    padding: 4px 20px 4px 5px;
+    width: 100%;
+    height: auto;
+    outline: 0;
+    border: 1px solid #aaa;
+    background: #fff url(chosen-sprite.png) no-repeat 100% -20px;
+    background: url(chosen-sprite.png) no-repeat 100% -20px;
+    font-size: 1em;
+    font-family: sans-serif;
+    line-height: normal;
+    border-radius: 0;
+}
+
+.chosen-container-single .chosen-drop {
+    margin-top: -1px;
+    border-radius: 0 0 4px 4px;
+    background-clip: padding-box;
+}
+
+.chosen-container-single.chosen-container-single-nosearch .chosen-search {
+    position: absolute;
+    left: -9999px;
+}
+
+.chosen-container .chosen-results {
+    color: #444;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0 4px 4px 0;
+    padding: 0 0 0 4px;
+    max-height: 240px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.chosen-container .chosen-results li {
+    display: none;
+    margin: 0;
+    padding: 5px 6px;
+    list-style: none;
+    line-height: 15px;
+    word-wrap: break-word;
+    -webkit-touch-callout: none;
+}
+
+.chosen-container .chosen-results li.active-result {
+    display: list-item;
+    cursor: pointer;
+}
+
+.chosen-container .chosen-results li.disabled-result {
+    display: list-item;
+    color: #ccc;
+    cursor: default;
+}
+
+.chosen-container .chosen-results li.highlighted {
+    background-color: $accent-color;
+    color: #fff;
+}
+
+.chosen-container .chosen-results li.no-results {
+    color: #777;
+    display: list-item;
+    background: #f4f4f4;
+}
+
+.chosen-container .chosen-results li.group-result {
+    display: list-item;
+    font-weight: 700;
+    cursor: default;
+}
+
+.chosen-container .chosen-results li.group-option {
+    padding-left: 15px;
+}
+
+.chosen-container .chosen-results li em {
+    font-style: normal;
+    text-decoration: underline;
+}
+
+.chosen-container-multi .chosen-choices {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 10px;
+    font-size: x-large;
+    width: 100%;
+    height: auto !important;
+    height: 1%;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(1%, #eee), color-stop(15%, #fff));
+    background-image: -webkit-linear-gradient(#eee 1%, #fff 15%);
+    background-image: -moz-linear-gradient(#eee 1%, #fff 15%);
+    background-image: -o-linear-gradient(#eee 1%, #fff 15%);
+    background-image: linear-gradient(#eee 1%, #fff 15%);
+    cursor: text;
+}
+
+.chosen-container-multi .chosen-choices li {
+    float: left;
+    list-style: none;
+}
+
+.chosen-container-multi .chosen-choices li.search-field {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    opacity: 0.5;
+}
+
+.chosen-container-multi .chosen-choices li.search-field input[type=text] {
+    margin: 1px 0;
+    padding: 0;
+    height: 25px;
+    outline: 0;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none;
+    color: #999;
+    font-size: 100%;
+    font-family: sans-serif;
+    line-height: normal;
+    border-radius: 0;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+    position: relative;
+    margin: 3px 5px 3px 0;
+    padding: 3px 20px 3px 5px;
+    border: 1px solid $divider-color;
+    max-width: 100%;
+    background-color: $primary-color-text;
+	@include shadow_lvl1;
+    color: #333;
+    line-height: 13px;
+    cursor: default;
+    font-size: initial;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice span {
+    word-wrap: break-word;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+    position: absolute;
+    top: 4px;
+    right: 3px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url(chosen-sprite.png) -42px 1px no-repeat;
+    font-size: 1px;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+    background-position: -42px -10px;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice-disabled {
+    padding-right: 5px;
+    border: 1px solid #ccc;
+    background-color: #e4e4e4;
+    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eee));
+    background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
+    background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
+    background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
+    background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
+    color: #666;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice-focus {
+    background: #d4d4d4;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close {
+    background-position: -42px -10px;
+}
+
+.chosen-container-multi .chosen-results {
+    margin: 0;
+    padding: 0;
+}
+
+.chosen-container-multi .chosen-drop .result-selected {
+    display: list-item;
+    color: #ccc;
+    cursor: default;
+}
+
+.chosen-container-active .chosen-single {
+    border: 1px solid #5897fb;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single {
+    border: 1px solid #aaa;
+    -moz-border-radius-bottomright: 0;
+    border-bottom-right-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-bottom-left-radius: 0;
+    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(20%, #eee), color-stop(80%, #fff));
+    background-image: -webkit-linear-gradient(#eee 20%, #fff 80%);
+    background-image: -moz-linear-gradient(#eee 20%, #fff 80%);
+    background-image: -o-linear-gradient(#eee 20%, #fff 80%);
+    background-image: linear-gradient(#eee 20%, #fff 80%);
+    box-shadow: 0 1px 0 #fff inset;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single div {
+    border-left: 0;
+    background: transparent;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+    background-position: -18px 2px;
+}
+
+.chosen-container-active .chosen-choices {
+    border: 1px solid #5897fb;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.chosen-container-active .chosen-choices li.search-field input[type=text] {
+    color: #222 !important;
+}
+
+.chosen-disabled {
+    opacity: 0.5 !important;
+    cursor: default;
+}
+
+.chosen-disabled .chosen-single {
+    cursor: default;
+}
+
+.chosen-disabled .chosen-choices .search-choice .search-choice-close {
+    cursor: default;
+}
+
+.chosen-rtl {
+    text-align: right;
+}
+
+.chosen-rtl .chosen-single {
+    overflow: visible;
+    padding: 0 8px 0 0;
+}
+
+.chosen-rtl .chosen-single span {
+    margin-right: 0;
+    margin-left: 26px;
+    direction: rtl;
+}
+
+.chosen-rtl .chosen-single-with-deselect span {
+    margin-left: 38px;
+}
+
+.chosen-rtl .chosen-single div {
+    right: auto;
+    left: 3px;
+}
+
+.chosen-rtl .chosen-single abbr {
+    right: auto;
+    left: 26px;
+}
+
+.chosen-rtl .chosen-choices li {
+    float: right;
+}
+
+.chosen-rtl .chosen-choices li.search-field input[type=text] {
+    direction: rtl;
+}
+
+.chosen-rtl .chosen-choices li.search-choice {
+    margin: 3px 5px 3px 0;
+    padding: 3px 5px 3px 19px;
+}
+
+.chosen-rtl .chosen-choices li.search-choice .search-choice-close {
+    right: auto;
+    left: 4px;
+}
+
+.chosen-rtl.chosen-container-single-nosearch .chosen-search, .chosen-rtl .chosen-drop {
+    left: 9999px;
+}
+
+.chosen-rtl.chosen-container-single .chosen-results {
+    margin: 0 0 4px 4px;
+    padding: 0 4px 0 0;
+}
+
+.chosen-rtl .chosen-results li.group-option {
+    padding-right: 15px;
+    padding-left: 0;
+}
+
+.chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div {
+    border-right: 0;
+}
+
+.chosen-rtl .chosen-search input[type=text] {
+    padding: 4px 5px 4px 20px;
+    background: #fff url(chosen-sprite.png) no-repeat -30px -20px;
+    background: url(chosen-sprite.png) no-repeat -30px -20px;
+    direction: rtl;
+}
+
+.chosen-rtl.chosen-container-single .chosen-single div b {
+    background-position: 6px 2px;
+}
+
+.chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
+    background-position: -12px 2px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
+    .chosen-rtl .chosen-search input[type=text], .chosen-container-single .chosen-single abbr, .chosen-container-single .chosen-single div b, .chosen-container-single .chosen-search input[type=text], .chosen-container-multi .chosen-choices .search-choice .search-choice-close, .chosen-container .chosen-results-scroll-down span, .chosen-container .chosen-results-scroll-up span {
+        background-image: url(chosen-sprite@2x.png) !important;
+        background-size: 52px 37px !important;
+        background-repeat: no-repeat !important;
+    }
+}
+// ------------- END CHOSEN STYLE
+
+// ------------- GITHUB RIBBON STYLE
+/*!
+ * "Fork me on GitHub" CSS ribbon v0.1.1 | MIT License
+ * https://github.com/simonwhitaker/github-fork-ribbon-css
+*/
+
+/* Left will inherit from right (so we don't need to duplicate code) */
+.github-fork-ribbon {
+  /* The right and left classes determine the side we attach our banner to */
+  position: absolute;
+
+  /* Add a bit of padding to give some substance outside the "stitching" */
+  padding: 2px 0;
+
+  /* Set the base colour */
+  background-color: $accent-color;
+
+  /* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+
+  /* Add a drop shadow */
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+
+  /* Set the font */
+  font: 700 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.github-fork-ribbon a,
+.github-fork-ribbon a:hover {
+  /* Set the text properties */
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  /* Set the geometry. If you fiddle with these you'll also need
+     to tweak the top and right values in .github-fork-ribbon. */
+  width: 200px;
+  line-height: 20px;
+
+  /* Set the layout properties */
+  display: inline-block;
+  padding: 2px 0;
+
+  /* Add "stitching" effect */
+  border-width: 1px 0;
+  border-style: dotted;
+  border-color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.github-fork-ribbon-wrapper {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.github-fork-ribbon-wrapper.fixed {
+  position: fixed;
+}
+
+.github-fork-ribbon-wrapper.left {
+  left: 0;
+}
+
+.github-fork-ribbon-wrapper.right {
+  right: 0;
+}
+
+.github-fork-ribbon-wrapper.left-bottom {
+  position: fixed;
+  top: inherit;
+  bottom: 0;
+  left: 0;
+}
+
+.github-fork-ribbon-wrapper.right-bottom {
+  position: fixed;
+  top: inherit;
+  bottom: 0;
+  right: 0;
+}
+
+.github-fork-ribbon-wrapper.right .github-fork-ribbon {
+  top: 42px;
+  right: -43px;
+
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.github-fork-ribbon-wrapper.left .github-fork-ribbon {
+  top: 42px;
+  left: -43px;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+
+.github-fork-ribbon-wrapper.left-bottom .github-fork-ribbon {
+  top: 80px;
+  left: -43px;
+
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.github-fork-ribbon-wrapper.right-bottom .github-fork-ribbon {
+  top: 80px;
+  right: -43px;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+//-------- END GITHUB RIBBON STYLE

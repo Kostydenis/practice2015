@@ -1,4 +1,4 @@
-# practice2015 (v1.0.0) RELEASE
+# practice2015 (v1.0.1) RELEASE
 My practice work. DEF-codes html parser.
 
 ## Известные проблемы
