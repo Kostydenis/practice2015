@@ -1,0 +1,134 @@
+%!TEX root = main.tex
+\ProvidesPackage{customCodes}[2013/01/13 Custom Codes]
+% ---------------------LISTINGS
+% there are two ways to include listing:
+% 1. "\usepackage{listings}"
+%	troubles with russian symbols can occur
+%	does not support some languages like CSS
+%	styles are missing - under construction
+
+% 2. stand-alone program "highlight": http://www.andre-simon.de/doku/highlight/en/highlight.php
+
+%	1.
+\usepackage{listings}
+\lstset{ %
+	backgroundcolor=\color{gray}{0.5},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+	inputencoding=utf8x,
+	keepspaces = true
+	extendedchars=false,
+	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+	breaklines=true,                 % sets automatic line breaking
+	captionpos=t,                    % sets the caption-position to bottom
+	commentstyle=\color{green},    % comment style
+	deletekeywords={...},            % if you want to delete keywords from the given language
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+%	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	frame=single,                    % adds a frame around the code
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\color{blue},       % keyword style
+%	language=Python,                 % the language of the code
+	otherkeywords={*,...},            % if you want to add more keywords to the set
+	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,                   % how far the line-numbers are from the code
+	numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
+	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,          % underline spaces within strings only
+	showtabs=false,                  % show tabs within strings adding particular underscores
+	stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color{red},     % string literal style
+	tabsize=2,                       % sets default tabsize to 2 spaces
+	title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+\renewcommand{\lstlistingname}{Листинг}
+
+% Styles:
+\lstdefinestyle{customc}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	frame=L,
+	xleftmargin=\parindent,
+	language=Python,
+%	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+}
+%	end 1.
+
+%	2.
+
+\definecolor{lstcodeBG}{rgb}{0.95,0.95,0.95}
+\definecolor{lstcodeFR}{rgb}{0.95,0.95,0.95}
+
+\newcounter{lstcodeN}[section]
+\setcounter{lstcodeN}{1}
+\newcommand{\lstcode}[4]{
+	\addtocounter{lstcodeN}{1}
+		\vspace{0.5cm}
+		Листинг \thesection.\arabic{lstcodeN} - #4
+		\vspace{-0.25cm}
+	#3
+	\linespread{#2}
+		\begin{framed}
+			\input{#1} 
+		\end{framed}
+	\normalsize
+	\linespread{1}
+}
+
+
+% escape characters DO NOT EDIT
+\newsavebox{\hlboxclosebrace}%
+\newsavebox{\hlboxopenbrace}%
+\newsavebox{\hlboxbackslash}%
+\newsavebox{\hlboxlessthan}%
+\newsavebox{\hlboxgreaterthan}%
+\newsavebox{\hlboxdollar}%
+\newsavebox{\hlboxunderscore}%
+\newsavebox{\hlboxand}%
+\newsavebox{\hlboxhash}%
+\newsavebox{\hlboxat}%
+\newsavebox{\hlboxpercent}% 
+\newsavebox{\hlboxhat}%
+\newsavebox{\hlboxsinglequote}%
+\newsavebox{\hlboxbacktick}%
+
+\setbox\hlboxopenbrace=\hbox{\verb.{.}%
+\setbox\hlboxclosebrace=\hbox{\verb.}.}%
+\setbox\hlboxlessthan=\hbox{\verb.<.}%
+\setbox\hlboxdollar=\hbox{\verb.$.}%
+\setbox\hlboxunderscore=\hbox{\verb._.}%
+\setbox\hlboxand=\hbox{\verb.&.}%
+\setbox\hlboxhash=\hbox{\verb.#.}%
+\setbox\hlboxat=\hbox{\verb.@.}%
+\setbox\hlboxbackslash=\hbox{\verb.\.}%
+\setbox\hlboxgreaterthan=\hbox{\verb.>.}%
+\setbox\hlboxpercent=\hbox{\verb.%.}%
+\setbox\hlboxhat=\hbox{\verb.^.}%
+\setbox\hlboxsinglequote=\hbox{\verb.'.}%
+\setbox\hlboxbacktick=\hbox{\verb.`.}%
+\setbox\hlboxhat=\hbox{\verb.^.}%
+
+% XCODE preinstalled theme for highlight
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\hlesc}[1]{\textcolor[rgb]{0.64,0.08,0.08}{#1}}
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.64,0.08,0.08}{#1}}
+\newcommand{\hlpps}[1]{\textcolor[rgb]{0,0,1}{#1}}
+\newcommand{\hlslc}[1]{\textcolor[rgb]{0,0.5,0}{#1}}
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0,0.5,0}{#1}}
+\newcommand{\hlppc}[1]{\textcolor[rgb]{0,0,1}{#1}}
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\hlipl}[1]{\textcolor[rgb]{0.64,0.08,0.08}{#1}}
+\newcommand{\hllin}[1]{\textcolor[rgb]{0.17,0.57,0.69}{#1}}
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0,0,1}{#1}}
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0,0,1}{#1}}
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.17,0.57,0.69}{#1}}
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\definecolor{bgcolor}{gray}{0.95}
+%	end 2.
+\endinput
